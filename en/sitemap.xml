@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://marcodenisi.dev/en/blog/</loc>
+    <lastmod>2019-06-14T06:42:21-07:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="it"
+                href="https://marcodenisi.dev/it/blog/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://marcodenisi.dev/en/blog/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://marcodenisi.dev/en/about/</loc>
+    <lastmod>2015-08-22T06:42:21-07:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="it"
+                href="https://marcodenisi.dev/it/about/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://marcodenisi.dev/en/about/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://marcodenisi.dev/en/categories/</loc>
+    <priority>0</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="it"
+                href="https://marcodenisi.dev/it/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://marcodenisi.dev/en/categories/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://marcodenisi.dev/en/</loc>
+    <priority>0</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="it"
+                href="https://marcodenisi.dev/it/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://marcodenisi.dev/en/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://marcodenisi.dev/en/tags/</loc>
+    <priority>0</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="it"
+                href="https://marcodenisi.dev/it/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://marcodenisi.dev/en/tags/"
+                />
+  </url>
+  
+</urlset>
