@@ -3,77 +3,77 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://marcodenisi.dev/it/blog/</loc>
+    <loc>https://marcodenisi.github.io/it/blog/</loc>
     <lastmod>2019-06-14T06:42:21-07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://marcodenisi.dev/en/blog/"
+                href="https://marcodenisi.github.io/en/blog/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="it"
-                href="https://marcodenisi.dev/it/blog/"
+                href="https://marcodenisi.github.io/it/blog/"
                 />
   </url>
   
   <url>
-    <loc>https://marcodenisi.dev/it/about/</loc>
+    <loc>https://marcodenisi.github.io/it/about/</loc>
     <lastmod>2015-08-22T06:42:21-07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://marcodenisi.dev/en/about/"
+                href="https://marcodenisi.github.io/en/about/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="it"
-                href="https://marcodenisi.dev/it/about/"
+                href="https://marcodenisi.github.io/it/about/"
                 />
   </url>
   
   <url>
-    <loc>https://marcodenisi.dev/it/categories/</loc>
+    <loc>https://marcodenisi.github.io/it/categories/</loc>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://marcodenisi.dev/en/categories/"
+                href="https://marcodenisi.github.io/en/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="it"
-                href="https://marcodenisi.dev/it/categories/"
+                href="https://marcodenisi.github.io/it/categories/"
                 />
   </url>
   
   <url>
-    <loc>https://marcodenisi.dev/it/</loc>
+    <loc>https://marcodenisi.github.io/it/</loc>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://marcodenisi.dev/en/"
+                href="https://marcodenisi.github.io/en/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="it"
-                href="https://marcodenisi.dev/it/"
+                href="https://marcodenisi.github.io/it/"
                 />
   </url>
   
   <url>
-    <loc>https://marcodenisi.dev/it/tags/</loc>
+    <loc>https://marcodenisi.github.io/it/tags/</loc>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://marcodenisi.dev/en/tags/"
+                href="https://marcodenisi.github.io/en/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="it"
-                href="https://marcodenisi.dev/it/tags/"
+                href="https://marcodenisi.github.io/it/tags/"
                 />
   </url>
   
