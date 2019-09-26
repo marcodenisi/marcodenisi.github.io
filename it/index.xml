@@ -6,9 +6,21 @@
     <description>Recent content on Marco Denisi</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>it</language>
+    <lastBuildDate>Thu, 26 Sep 2019 00:07:46 +0200</lastBuildDate>
     
 	<atom:link href="https://marcodenisi.dev/it/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Lambda Step by Step</title>
+      <link>https://marcodenisi.dev/it/blog/lambda-step-by-step/</link>
+      <pubDate>Thu, 26 Sep 2019 00:07:46 +0200</pubDate>
+      
+      <guid>https://marcodenisi.dev/it/blog/lambda-step-by-step/</guid>
+      <description>Nelle ultime settimane ho avuto molto a che fare con la creazione di AWS Lambda.
+La difficoltà più grossa con cui ho dovuto fare i conti è stata quella di testare in locale queste funzioni. Sicuramente è possibile (anzi, necessario) scrivere unit ed integration test, ma mi piace comunque testare in un ambiente il più vicino possibile a quello di produzione.
+Vorrei quindi costruire una sorta di guida per avere un reminder per i futuri sviluppi.</description>
+    </item>
     
   </channel>
 </rss>

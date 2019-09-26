@@ -6,9 +6,46 @@
     <description>Recent content in Tags on Marco Denisi</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>it</language>
+    <lastBuildDate>Thu, 26 Sep 2019 00:07:46 +0200</lastBuildDate>
     
 	<atom:link href="https://marcodenisi.dev/it/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Aws</title>
+      <link>https://marcodenisi.dev/it/tags/aws/</link>
+      <pubDate>Thu, 26 Sep 2019 00:07:46 +0200</pubDate>
+      
+      <guid>https://marcodenisi.dev/it/tags/aws/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Java8</title>
+      <link>https://marcodenisi.dev/it/tags/java8/</link>
+      <pubDate>Thu, 26 Sep 2019 00:07:46 +0200</pubDate>
+      
+      <guid>https://marcodenisi.dev/it/tags/java8/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Lambda</title>
+      <link>https://marcodenisi.dev/it/tags/lambda/</link>
+      <pubDate>Thu, 26 Sep 2019 00:07:46 +0200</pubDate>
+      
+      <guid>https://marcodenisi.dev/it/tags/lambda/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Sam</title>
+      <link>https://marcodenisi.dev/it/tags/sam/</link>
+      <pubDate>Thu, 26 Sep 2019 00:07:46 +0200</pubDate>
+      
+      <guid>https://marcodenisi.dev/it/tags/sam/</guid>
+      <description></description>
+    </item>
     
   </channel>
 </rss>

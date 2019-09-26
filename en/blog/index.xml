@@ -11,5 +11,16 @@
 	<atom:link href="https://marcodenisi.dev/en/blog/index.xml" rel="self" type="application/rss+xml" />
     
     
+    <item>
+      <title>Lambda Step by Step</title>
+      <link>https://marcodenisi.dev/en/blog/lambda-step-by-step/</link>
+      <pubDate>Thu, 26 Sep 2019 00:07:46 +0200</pubDate>
+      
+      <guid>https://marcodenisi.dev/en/blog/lambda-step-by-step/</guid>
+      <description>During last weeks, I&amp;rsquo;ve worked a lot with AWS Lambda.
+The main challenge I had was to look for a method to locally test those functions. Of course, it is possible to do some partial code execution as part of unit/integration test setup, but that won’t be close enough to production setup.
+I&amp;rsquo;d like to build a sort of how-to guide in order to have a reference in the future.</description>
+    </item>
+    
   </channel>
 </rss>
