@@ -6,10 +6,20 @@
     <description>Recent content on Marco Denisi</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>it</language>
-    <lastBuildDate>Thu, 26 Sep 2019 00:07:46 +0200</lastBuildDate>
+    <lastBuildDate>Tue, 05 Nov 2019 10:26:59 +0100</lastBuildDate>
     
 	<atom:link href="https://marcodenisi.dev/en/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Github Actions: a concrete example with Hugo and Latex</title>
+      <link>https://marcodenisi.dev/en/blog/github-actions-a-concrete-example-with-hugo-and-latex/</link>
+      <pubDate>Tue, 05 Nov 2019 10:26:59 +0100</pubDate>
+      
+      <guid>https://marcodenisi.dev/en/blog/github-actions-a-concrete-example-with-hugo-and-latex/</guid>
+      <description>Months ago I decided to write my curriculum using Latex and to use Github to version it (here the repository). I said to myself that it would be beautiful to automatically create the latest cv version as a pdf file whenever I update the source files, maybe as a Github release.
+I had the same desire when I started thinking about this blog: wouldn&amp;rsquo;t be amazing if at each new content, a new blog version was deployed automatically?</description>
+    </item>
     
     <item>
       <title>Lambda Step by Step</title>
