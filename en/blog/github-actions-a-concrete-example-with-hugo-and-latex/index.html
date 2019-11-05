@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<meta name="author" content="Marco Denisi">
+<meta name="description" content="Months ago I decided to write my curriculum using Latex and to use Github to version it (here the repository). I said to myself that it would be beautiful to automatically create the latest cv version as a pdf file whenever I update the source files, maybe as a Github release.
+I had the same desire when I started thinking about this blog: wouldn&rsquo;t be amazing if at each new content, a new blog version was deployed automatically?">
+
+<meta property="og:title" content="Github Actions: a concrete example with Hugo and Latex" />
+<meta property="og:description" content="Months ago I decided to write my curriculum using Latex and to use Github to version it (here the repository). I said to myself that it would be beautiful to automatically create the latest cv version as a pdf file whenever I update the source files, maybe as a Github release.
+I had the same desire when I started thinking about this blog: wouldn&rsquo;t be amazing if at each new content, a new blog version was deployed automatically?" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://marcodenisi.dev/en/blog/github-actions-a-concrete-example-with-hugo-and-latex/" />
+<meta property="article:published_time" content="2019-11-04T18:26:59&#43;01:00"/>
+<meta property="article:modified_time" content="2019-11-04T18:26:59&#43;01:00"/>
+
+
+<script type="application/ld+json">
+    {
+        "@context" : "http://schema.org",
+        "@type" : "BlogPosting",
+        "mainEntityOfPage": {
+             "@type": "WebPage",
+             "@id": "https://marcodenisi.dev"
+        },
+        "articleSection" : "blog",
+        "name" : "Github Actions: a concrete example with Hugo and Latex",
+        "headline" : "Github Actions: a concrete example with Hugo and Latex",
+        "description" : "Months ago I decided to write my curriculum using Latex and to use Github to version it (here the repository). I said to myself that it would be beautiful to automatically create the latest cv version as a pdf file whenever I update the source files, maybe as a Github release.
+I had the same desire when I started thinking about this blog: wouldn&rsquo;t be amazing if at each new content, a new blog version was deployed automatically?",
+        "inLanguage" : "en",
+        "author" : "Marco Denisi",
+        "creator" : "Marco Denisi",
+        "publisher": "Marco Denisi",
+        "accountablePerson" : "Marco Denisi",
+        "copyrightHolder" : "Marco Denisi",
+        "copyrightYear" : "2019",
+        "datePublished": "2019-11-04 18:26:59 &#43;0100 &#43;0100",
+        "dateModified" : "2019-11-04 18:26:59 &#43;0100 &#43;0100",
+        "url" : "https://marcodenisi.dev/en/blog/github-actions-a-concrete-example-with-hugo-and-latex/",
+        "wordCount" : "611",
+        "keywords" : [ "cd","github-actions","github","hugo","Blog" ]
+    }
+    </script>
+<title>
+
+
+     Github Actions: a concrete example with Hugo and Latex 
+
+</title>
+<link rel="canonical" href="https://marcodenisi.dev/en/blog/github-actions-a-concrete-example-with-hugo-and-latex/">
+
+
+
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/default.min.css">
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Ubuntu+Mono:400,400i,700,700i|Raleway:500">
+
+
+
+    
+    <link rel="stylesheet" href="https://marcodenisi.dev/css/reset.css?t=2019-11-05%2017%3a35%3a55.613884214%20%2b0000%20UTC%20m%3d%2b0.101999858">
+    <link rel="stylesheet" href="https://marcodenisi.dev/css/pygments.css?t=2019-11-05%2017%3a35%3a55.613884214%20%2b0000%20UTC%20m%3d%2b0.101999858">
+    <link rel="stylesheet" href="https://marcodenisi.dev/css/main.css?t=2019-11-05%2017%3a35%3a55.613884214%20%2b0000%20UTC%20m%3d%2b0.101999858">
+    
+        <link rel="stylesheet" href="https://marcodenisi.dev/css/override.css?t=2019-11-05%2017%3a35%3a55.613884214%20%2b0000%20UTC%20m%3d%2b0.101999858">
+    
+
+
+
+
+<link rel="shortcut icon"
+
+    href="https://marcodenisi.dev/img/favicon/favicon.ico"
+
+>
+
+
+
+
+
+
+
+
+</head>
+
+
+<body lang="it">
+
+<section class="header">
+    <div class="container">
+        <div class="content">
+            
+                
+                
+                
+                
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                
+                <a href="https://marcodenisi.dev/en/"><img class="avatar" src="https://marcodenisi.dev/img/profile_square_small.png" srcset="https://marcodenisi.dev/img/profile_square_small.png 1x"></a>
+            
+            <a href="https://marcodenisi.dev/en/"><div class="name">Marco Denisi</div></a>
+            
+            <nav>
+                <ul>
+                    
+                        <li class="nav-blog"><a href="https://marcodenisi.dev/en/blog/"><span>Blog</span></a></li>
+                    
+                        <li class="nav-about"><a href="https://marcodenisi.dev/en/about/"><span>About</span></a></li>
+                    
+                </ul>
+            </nav>
+        </div>
+    </div>
+</section>
+
+<section class="icons">
+    <div class="container">
+        <div class="content">
+        
+            <a href="//github.com/marcodenisi" target="_blank" rel="noopener"><img class="icon" src="https://marcodenisi.dev/img/github.svg" alt="github" /></a>
+        
+
+        
+
+        
+
+	
+
+        
+
+        
+
+        
+            <a href="//linkedin.com/in/marco-denisi" target="_blank" rel="noopener"><img class="icon" src="https://marcodenisi.dev/img/linkedin.svg" alt="linkedin" /></a>
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+            <a href="mailto:marcodenisi35@gmail.com"><img class="icon" src="https://marcodenisi.dev/img/email.svg" alt="email" /></a>
+        
+
+        
+
+        
+            
+                <a href="https://marcodenisi.dev/it/blog/github-actions-un-esempio-concreto-con-hugo-e-latex/"><img class="icon flag" src="https://marcodenisi.dev/img/flags/it.svg"></a>
+            
+        
+        </div>
+    </div>
+</section>
+
+
+<section class="main post non-narrow zero-top-spacing">
+    <div class="container">
+        <div class="content">
+            <div class="front-matter">
+                <div class="title-container">
+                    <div class="page-heading">
+
+    Github Actions: a concrete example with Hugo and Latex
+
+</div>
+
+                    <div class="initials"><a href="https://marcodenisi.dev">ad</a></div>
+                </div>
+                <div class="meta">
+                    
+                    <div class="date" title='04/11/2019 18:26'>04/11/2019</div>
+                    
+                    
+		    <div class="reading-time"><div class="middot"></div>3 minutes read</div>
+                    
+                </div>
+            </div>
+            <div class="markdown">
+                
+
+<p>Months ago I decided to write my curriculum using Latex and to use Github to version it (<a href="https://github.com/marcodenisi/cv">here</a> the repository). I said to myself that it would be beautiful to automatically create the latest cv version as a pdf file whenever I update the source files, maybe as a Github <em>release</em>.</p>
+
+<p>I had the same desire when I started thinking about this blog: wouldn&rsquo;t be amazing if at each new content, a new blog version was deployed automatically?</p>
+
+<p>Well, that&rsquo;s the story of this journey: from all manual to automatic flow using Github Actions.</p>
+
+<h1 id="github-actions">Github Actions</h1>
+
+<p>Github Actions it&rsquo;s a new Github <em>feature</em> allowing users to create CI/CD workflows within the repository.</p>
+
+<p>A <strong>workflow</strong> is defined in a <em>yaml</em> file and it&rsquo;s nothing but a list of <strong>jobs</strong>. Each job is then composed by <strong>steps</strong>. Lastly, each step is a set of <strong>actions</strong>. And it&rsquo;s the action the Github atomic unit: each of these performs an operation (e.g. it checkouts the repository, it creates a release, &hellip;).</p>
+
+<p>In a single repository, many workflows can exist and they should be defined in the <code>.github/workflows</code> folder.</p>
+
+<p>Each workflow is triggered by an event. For example, we could have a workflow triggered whenever a push is done in a branch:</p>
+
+<pre><code class="language-yaml">name: Deploy new version    # workflow name
+on: 
+  push:
+    branches:
+      - master
+</code></pre>
+
+<p>But what happens under the hood? Github has a pool of virtual machines (hosted on Azure). In each of these VMs are installed some special services called <em>runners</em>. When a workflow instance is created, jobs contained are executed by these runners.</p>
+
+<p><a href="https://help.github.com/en/github/automating-your-workflow-with-github-actions">Here</a> the documentation.</p>
+
+<h1 id="cv-e-latex">CV e Latex</h1>
+
+<p>How to compile a Latex document? <a href="https://github.com/marcodenisi/cv/blob/master/.github/workflows/main.yml">Here</a> the file defining the workflow.</p>
+
+<pre><code class="language-yaml">name: Build CV
+on:
+  push:
+    tags:
+      - 'v*.*.*'
+jobs:
+  release_cv:
+    runs-on: ubuntu-latest
+    steps:
+    ...
+  
+  push_to_blog:
+    needs: release_cv
+    runs-on: ubuntu-latest
+    steps:
+    ...
+</code></pre>
+
+<p>This is an excerpt showing the yaml structure. Here we can find the workflow name (Build CV) and the triggering event (a push of a tag). Two jobs are defined as well:</p>
+
+<ul>
+<li><code>release_cv</code>: it compiles <code>.tex</code> files and it creates a new release on Github</li>
+<li><code>push_to_blog</code>: pushes the release to the blog repository</li>
+</ul>
+
+<p>Actions composing these jobs are pretty straight forward. The interesting part is about the interaction between jobs. I said before how jobs are executed by (probably different) runners in (probably different) virtual machines. So, potentially, they do not share any kind of data. In this context <strong>artifacts</strong> come into play. Artifacts are nothing but objects that are saved and retrieved at runtime by different jobs.</p>
+
+<p>In fact, the last action of the first job is the artifact upload:</p>
+
+<pre><code>    - name: Upload to virtual env
+      uses: actions/upload-artifact@v1
+      with:
+        name: cv
+        path: cv_MarcoDenisi.pdf
+</code></pre>
+
+<p>and the first action of the second job is the download of the same artifact:</p>
+
+<pre><code>    - name: Download from virtual env
+      uses: actions/download-artifact@v1
+      with:
+        name: cv
+</code></pre>
+
+<h1 id="blog-e-hugo">Blog e Hugo</h1>
+
+<p>The blog compilation and upload is quite homemade, <a href="https://github.com/marcodenisi/marcodenisi-dev/blob/master/.github/workflows/main.yml">here</a> the complete version:</p>
+
+<pre><code class="language-yaml">name: Deploy new version
+on: 
+  push:
+    branches:
+      - master
+      
+jobs:
+  deploy_blog:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout master
+      uses: actions/checkout@v1
+    - name: Build blog and deploy
+      run:  |
+        ... bash script
+</code></pre>
+
+<p>As you can see, each action can also execute simple bash scripts (omitted for the sake of brevity). Not very elegant, but it works!</p>
+
+<h1 id="putting-all-together">Putting all together</h1>
+
+<p>I accomplished multiple goals:</p>
+
+<ul>
+<li>dismiss an old (and ugly) solution composed by Travis script and bash scripts</li>
+<li>learn a new tool</li>
+<li>keep the CV updated</li>
+<li>&hellip; and so keep the blog updated as well</li>
+</ul>
+
+<p>Currently Github Actions is free for all repositories, both public and private (the latter with some limitations). I think it&rsquo;s really worth start looking into it to have an integrated solution all in one place.</p>
+
+                <br>
+                
+                  <div class="tags">
+                    <strong>Tags:</strong>
+                  
+                    <a href="https://marcodenisi.dev/en/tags/cd">cd</a>
+                  
+                    <a href="https://marcodenisi.dev/en/tags/github-actions">github-actions</a>
+                  
+                    <a href="https://marcodenisi.dev/en/tags/github">github</a>
+                  
+                    <a href="https://marcodenisi.dev/en/tags/hugo">hugo</a>
+                  
+                  </div>
+                  <br />
+                
+                <p class="back-to-posts"><a href="https://marcodenisi.dev/en/blog">Back to posts</a></p>
+            </div>
+            <br>
+            <div class="disqus">
+                
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-143191600-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/languages/go.min.js"></script>
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/languages/yaml.min.js"></script>
+  
+
+  <script type="text/javascript">
+    hljs.initHighlightingOnLoad();
+  </script>
+
+
+
+
+
+</body>
+</html>
+

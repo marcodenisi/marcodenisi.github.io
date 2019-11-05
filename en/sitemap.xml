@@ -3,6 +3,21 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://marcodenisi.dev/en/blog/github-actions-a-concrete-example-with-hugo-and-latex/</loc>
+    <lastmod>2019-11-04T18:26:59+01:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="it"
+                href="https://marcodenisi.dev/it/blog/github-actions-un-esempio-concreto-con-hugo-e-latex/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://marcodenisi.dev/en/blog/github-actions-a-concrete-example-with-hugo-and-latex/"
+                />
+  </url>
+  
+  <url>
     <loc>https://marcodenisi.dev/en/about/</loc>
     <lastmod>2019-09-26T00:07:46+02:00</lastmod>
     <xhtml:link
@@ -79,8 +94,24 @@
   </url>
   
   <url>
+    <loc>https://marcodenisi.dev/en/tags/cd/</loc>
+    <lastmod>2019-11-04T18:26:59+01:00</lastmod>
+    <priority>0</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="it"
+                href="https://marcodenisi.dev/it/tags/cd/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://marcodenisi.dev/en/tags/cd/"
+                />
+  </url>
+  
+  <url>
     <loc>https://marcodenisi.dev/en/categories/development/</loc>
-    <lastmod>2019-09-26T00:07:46+02:00</lastmod>
+    <lastmod>2019-11-04T18:26:59+01:00</lastmod>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
@@ -91,6 +122,54 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://marcodenisi.dev/en/categories/development/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://marcodenisi.dev/en/tags/github/</loc>
+    <lastmod>2019-11-04T18:26:59+01:00</lastmod>
+    <priority>0</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="it"
+                href="https://marcodenisi.dev/it/tags/github/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://marcodenisi.dev/en/tags/github/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://marcodenisi.dev/en/tags/github-actions/</loc>
+    <lastmod>2019-11-04T18:26:59+01:00</lastmod>
+    <priority>0</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="it"
+                href="https://marcodenisi.dev/it/tags/github-actions/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://marcodenisi.dev/en/tags/github-actions/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://marcodenisi.dev/en/tags/hugo/</loc>
+    <lastmod>2019-11-04T18:26:59+01:00</lastmod>
+    <priority>0</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="it"
+                href="https://marcodenisi.dev/it/tags/hugo/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://marcodenisi.dev/en/tags/hugo/"
                 />
   </url>
   
@@ -128,7 +207,7 @@
   
   <url>
     <loc>https://marcodenisi.dev/en/</loc>
-    <lastmod>2019-09-26T00:07:46+02:00</lastmod>
+    <lastmod>2019-11-04T18:26:59+01:00</lastmod>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"

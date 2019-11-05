@@ -12,6 +12,16 @@
     
     
     <item>
+      <title>Github Actions: un esempio concreto con Hugo e Latex</title>
+      <link>https://marcodenisi.dev/it/blog/github-actions-un-esempio-concreto-con-hugo-e-latex/</link>
+      <pubDate>Mon, 04 Nov 2019 18:26:59 +0100</pubDate>
+      
+      <guid>https://marcodenisi.dev/it/blog/github-actions-un-esempio-concreto-con-hugo-e-latex/</guid>
+      <description>È un po&amp;rsquo; di tempo che ho deciso di scrivere il mio curriculum in Latex e di utilizzare Github per il versionamento (qui il repository). Mi sono detto che sarebbe stato molto bello se, ad ogni aggiornamento (aka ad ogni nuovo commit sul repository), mi fossi ritrovato il pdf risultante dalla compilazione come nuova release del mio cv.
+Lo stesso desiderio l&amp;rsquo;ho avuto quando ho cominciato a pensare e costruire questo blog: non sarebbe fantastico se ad ogni nuovo contenuto la pubblicazione avvenisse in maniera automatica?</description>
+    </item>
+    
+    <item>
       <title>Lambda Step by Step</title>
       <link>https://marcodenisi.dev/it/blog/lambda-step-by-step/</link>
       <pubDate>Thu, 26 Sep 2019 00:07:46 +0200</pubDate>

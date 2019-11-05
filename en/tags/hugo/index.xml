@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hugo on Marco Denisi</title>
+    <link>https://marcodenisi.dev/en/tags/hugo/</link>
+    <description>Recent content in Hugo on Marco Denisi</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>it</language>
+    <lastBuildDate>Mon, 04 Nov 2019 18:26:59 +0100</lastBuildDate>
+    
+	<atom:link href="https://marcodenisi.dev/en/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Github Actions: a concrete example with Hugo and Latex</title>
+      <link>https://marcodenisi.dev/en/blog/github-actions-a-concrete-example-with-hugo-and-latex/</link>
+      <pubDate>Mon, 04 Nov 2019 18:26:59 +0100</pubDate>
+      
+      <guid>https://marcodenisi.dev/en/blog/github-actions-a-concrete-example-with-hugo-and-latex/</guid>
+      <description>Months ago I decided to write my curriculum using Latex and to use Github to version it (here the repository). I said to myself that it would be beautiful to automatically create the latest cv version as a pdf file whenever I update the source files, maybe as a Github release.
+I had the same desire when I started thinking about this blog: wouldn&amp;rsquo;t be amazing if at each new content, a new blog version was deployed automatically?</description>
+    </item>
+    
+  </channel>
+</rss>
