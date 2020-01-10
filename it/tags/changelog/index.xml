@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Changelog on Marco Denisi</title>
+    <link>https://marcodenisi.dev/it/tags/changelog/</link>
+    <description>Recent content in Changelog on Marco Denisi</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>it</language>
+    <lastBuildDate>Fri, 10 Jan 2020 10:30:41 +0100</lastBuildDate>
+    
+	<atom:link href="https://marcodenisi.dev/it/tags/changelog/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Perchè dovresti usare Conventional Commits</title>
+      <link>https://marcodenisi.dev/it/blog/perch%C3%A8-dovresti-usare-conventional-commits/</link>
+      <pubDate>Fri, 10 Jan 2020 10:30:41 +0100</pubDate>
+      
+      <guid>https://marcodenisi.dev/it/blog/perch%C3%A8-dovresti-usare-conventional-commits/</guid>
+      <description>Ormai ovunque (o quasi) viene utilizzato un sistema di versioning per rendere più semplice la collaborazione di diversi sviluppatori sulla stessa codebase. Tutto bellissimo, non fosse che nella maggior parte dei casi, a lungo andare la storia dei diversi commit si avvicini molto alla seguente:
+Qualche commit ha introdotto una breaking change? Ci sono state fix? In bocca al lupo a trovare la risposta guardando solo la storia dei commit: cominciate pure a peregrinare all&amp;rsquo;interno dell&amp;rsquo;open space chiedendo chi ha fatto cosa.</description>
+    </item>
+    
+  </channel>
+</rss>

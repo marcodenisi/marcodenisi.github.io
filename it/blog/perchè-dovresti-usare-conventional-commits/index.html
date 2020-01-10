@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<meta name="author" content="Marco Denisi">
+<meta name="description" content="Ormai ovunque (o quasi) viene utilizzato un sistema di versioning per rendere più semplice la collaborazione di diversi sviluppatori sulla stessa codebase. Tutto bellissimo, non fosse che nella maggior parte dei casi, a lungo andare la storia dei diversi commit si avvicini molto alla seguente:
+Qualche commit ha introdotto una breaking change? Ci sono state fix? In bocca al lupo a trovare la risposta guardando solo la storia dei commit: cominciate pure a peregrinare all&rsquo;interno dell&rsquo;open space chiedendo chi ha fatto cosa.">
+
+<meta property="og:title" content="Perchè dovresti usare Conventional Commits" />
+<meta property="og:description" content="Ormai ovunque (o quasi) viene utilizzato un sistema di versioning per rendere più semplice la collaborazione di diversi sviluppatori sulla stessa codebase. Tutto bellissimo, non fosse che nella maggior parte dei casi, a lungo andare la storia dei diversi commit si avvicini molto alla seguente:
+Qualche commit ha introdotto una breaking change? Ci sono state fix? In bocca al lupo a trovare la risposta guardando solo la storia dei commit: cominciate pure a peregrinare all&rsquo;interno dell&rsquo;open space chiedendo chi ha fatto cosa." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://marcodenisi.dev/it/blog/perch%C3%A8-dovresti-usare-conventional-commits/" />
+<meta property="article:published_time" content="2020-01-10T10:30:41&#43;01:00"/>
+<meta property="article:modified_time" content="2020-01-10T10:30:41&#43;01:00"/>
+
+
+<script type="application/ld+json">
+    {
+        "@context" : "http://schema.org",
+        "@type" : "BlogPosting",
+        "mainEntityOfPage": {
+             "@type": "WebPage",
+             "@id": "https://marcodenisi.dev"
+        },
+        "articleSection" : "blog",
+        "name" : "Perchè dovresti usare Conventional Commits",
+        "headline" : "Perchè dovresti usare Conventional Commits",
+        "description" : "Ormai ovunque (o quasi) viene utilizzato un sistema di versioning per rendere più semplice la collaborazione di diversi sviluppatori sulla stessa codebase. Tutto bellissimo, non fosse che nella maggior parte dei casi, a lungo andare la storia dei diversi commit si avvicini molto alla seguente:
+Qualche commit ha introdotto una breaking change? Ci sono state fix? In bocca al lupo a trovare la risposta guardando solo la storia dei commit: cominciate pure a peregrinare all&rsquo;interno dell&rsquo;open space chiedendo chi ha fatto cosa.",
+        "inLanguage" : "it",
+        "author" : "Marco Denisi",
+        "creator" : "Marco Denisi",
+        "publisher": "Marco Denisi",
+        "accountablePerson" : "Marco Denisi",
+        "copyrightHolder" : "Marco Denisi",
+        "copyrightYear" : "2020",
+        "datePublished": "2020-01-10 10:30:41 &#43;0100 &#43;0100",
+        "dateModified" : "2020-01-10 10:30:41 &#43;0100 &#43;0100",
+        "url" : "https://marcodenisi.dev/it/blog/perch%C3%A8-dovresti-usare-conventional-commits/",
+        "wordCount" : "484",
+        "keywords" : [ "git","semantic-versioning","changelog","automation","cd","Blog" ]
+    }
+    </script>
+<title>
+
+
+     Perchè dovresti usare Conventional Commits 
+
+</title>
+<link rel="canonical" href="https://marcodenisi.dev/it/blog/perch%C3%A8-dovresti-usare-conventional-commits/">
+
+
+
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/default.min.css">
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Ubuntu+Mono:400,400i,700,700i|Raleway:500">
+
+
+
+    
+    <link rel="stylesheet" href="https://marcodenisi.dev/css/reset.css?t=2020-01-10%2011%3a43%3a47.569042035%20%2b0000%20UTC%20m%3d%2b0.049698294">
+    <link rel="stylesheet" href="https://marcodenisi.dev/css/pygments.css?t=2020-01-10%2011%3a43%3a47.569042035%20%2b0000%20UTC%20m%3d%2b0.049698294">
+    <link rel="stylesheet" href="https://marcodenisi.dev/css/main.css?t=2020-01-10%2011%3a43%3a47.569042035%20%2b0000%20UTC%20m%3d%2b0.049698294">
+    
+        <link rel="stylesheet" href="https://marcodenisi.dev/css/override.css?t=2020-01-10%2011%3a43%3a47.569042035%20%2b0000%20UTC%20m%3d%2b0.049698294">
+    
+
+
+
+
+<link rel="shortcut icon"
+
+    href="https://marcodenisi.dev/img/favicon/favicon.ico"
+
+>
+
+
+
+
+
+
+
+
+</head>
+
+
+<body lang="it">
+
+<section class="header">
+    <div class="container">
+        <div class="content">
+            
+                
+                
+                
+                
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                
+                <a href="https://marcodenisi.dev/it/"><img class="avatar" src="https://marcodenisi.dev/img/profile_square_small.png" srcset="https://marcodenisi.dev/img/profile_square_small.png 1x"></a>
+            
+            <a href="https://marcodenisi.dev/it/"><div class="name">Marco Denisi</div></a>
+            
+            <nav>
+                <ul>
+                    
+                        <li class="nav-blog"><a href="https://marcodenisi.dev/it/blog/"><span>Blog</span></a></li>
+                    
+                        <li class="nav-about"><a href="https://marcodenisi.dev/it/about/"><span>Chi Sono</span></a></li>
+                    
+                </ul>
+            </nav>
+        </div>
+    </div>
+</section>
+
+<section class="icons">
+    <div class="container">
+        <div class="content">
+        
+            <a href="//github.com/marcodenisi" target="_blank" rel="noopener"><img class="icon" src="https://marcodenisi.dev/img/github.svg" alt="github" /></a>
+        
+
+        
+
+        
+
+	
+
+        
+
+        
+
+        
+            <a href="//linkedin.com/in/marco-denisi" target="_blank" rel="noopener"><img class="icon" src="https://marcodenisi.dev/img/linkedin.svg" alt="linkedin" /></a>
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+            <a href="mailto:marcodenisi35@gmail.com"><img class="icon" src="https://marcodenisi.dev/img/email.svg" alt="email" /></a>
+        
+
+        
+
+        
+            
+                <a href="https://marcodenisi.dev/en/blog/why-you-should-use-conventional-commits/"><img class="icon flag" src="https://marcodenisi.dev/img/flags/en.svg"></a>
+            
+        
+        </div>
+    </div>
+</section>
+
+
+<section class="main post non-narrow zero-top-spacing">
+    <div class="container">
+        <div class="content">
+            <div class="front-matter">
+                <div class="title-container">
+                    <div class="page-heading">
+
+    Perchè dovresti usare Conventional Commits
+
+</div>
+
+                    <div class="initials"><a href="https://marcodenisi.dev">ad</a></div>
+                </div>
+                <div class="meta">
+                    
+                    <div class="date" title='10/01/2020 10:30'>10/01/2020</div>
+                    
+                    
+		    <div class="reading-time"><div class="middot"></div>3 minuti di lettura</div>
+                    
+                </div>
+            </div>
+            <div class="markdown">
+                
+
+<p>Ormai ovunque (o quasi) viene utilizzato un sistema di <em>versioning</em> per rendere più semplice la collaborazione di diversi sviluppatori sulla stessa <em>codebase</em>. Tutto bellissimo, non fosse che nella maggior parte dei casi, a lungo andare la storia dei diversi <em>commit</em> si avvicini molto alla seguente:</p>
+
+<p><img src="https://marcodenisi.dev/img/articles/git_commit.png" alt="Git Commit - xkcd" /></p>
+
+<p>Qualche commit ha introdotto una <em>breaking change</em>? Ci sono state <em>fix</em>? In bocca al lupo a trovare la risposta guardando solo la storia dei commit: cominciate pure a peregrinare all&rsquo;interno dell&rsquo;open space chiedendo chi ha fatto cosa.</p>
+
+<p>Da questo problema ne deriva un altro. Poniamo che si debba decidere il numero di versione del software che si rilascia. Solitamente, la versione è composta da tre numeri <code>X.Y.Z</code>. Come si decide che valore dare ad ognuno di questi? Non solo: come si crea il <em>changelog</em> al rilascio?</p>
+
+<p>A queste problematiche c&rsquo;è una soluzione specifica, ma tutto parte dall&rsquo;introduzione di <strong>Conventional Commits</strong>.</p>
+
+<h1 id="cos-è-conventional-commits">Cos&rsquo;è Conventional Commits</h1>
+
+<p>Conventional Commits non è nient&rsquo;altro che una <em>convenzione</em> su come scrivere i messaggi di commit. Come dice il <a href="https://www.conventionalcommits.org/en/v1.0.0/">sito ufficiale</a>, i commit dovrebbero essere nella forma</p>
+
+<pre><code>&lt;type&gt;[optional scope]: &lt;description&gt;
+[optional body]
+[optional footer(s)]
+</code></pre>
+
+<p>Un esempio pratico è il seguente, tralasciando i campi opzionali:</p>
+
+<pre><code>feat: add new API to retrieve users
+</code></pre>
+
+<p>La specifica definisce diversi <em>type</em>. I più importanti possono essere <code>feat</code> che descrive l&rsquo;introduzione di una nuova feature, oppure <code>fix</code>, che invece esplicita l&rsquo;introduzione di una fix. Ve ne sono molti altri, vi rimando alla documentazione ufficiale se volete entrare nel dettaglio.</p>
+
+<h1 id="perchè-è-utile">Perchè è utile</h1>
+
+<p>Una <em>git log</em> a volte vale più di mille parole:</p>
+
+<pre><code class="language-bash">fix(lambda-article): change publish date
+fix(lambda-article): make article not draft anymore
+feat(lambda-article): add new article on lambda functions
+feat(cd): introduce github action to automatically build website
+</code></pre>
+
+<p>Solo leggendo la serie di <em>commit descriptions</em> si riesce a capire esattamente cosa è stato fatto. In questo esempio, sono state introdotte due nuove <em>feature</em> ed altrettante <em>fix</em>.</p>
+
+<p>Con un po&rsquo; di consistenza e di buona volontà, si risolve il problema dello storico illeggibile. Tuttavia, niente che non si possa ottenere senza queste convenzioni.</p>
+
+<p>Ma è introducendo il <strong>Semantic Versioning</strong> che si hanno i benefici maggiori.</p>
+
+<h1 id="semantic-versioning">Semantic Versioning</h1>
+
+<p>Il <a href="https://semver.org/">Semantic Versioning</a> è un insieme di regole (un <em>framework</em>, come direbbero quelli bravi) che definisce esattamente come decidere il numero di versione di un applicativo.</p>
+
+<p>Dato un numero di versione <code>X.Y.Z</code>:</p>
+
+<ul>
+<li>X è il MAJOR: si incrementa quando si introducono <em>breaking change</em></li>
+<li>Y è il MINOR: per introduzioni di <em>feature</em> retrocompatibili</li>
+<li>Z è il PATCH: quando si inseriscono <em>bug fix</em> retrocompatibili</li>
+</ul>
+
+<p>Il legame con Conventional Commits è evidente: dalla storia dei commit si riesce a definire in maniera esatta il numero di versione da assegnare.</p>
+
+<p>Ci sono inoltre dei <em>tool</em> che permettono di autogenerare il changelog a partire dalla storia dei commit: in Sky ne abbiamo sviluppato uno internamente (<em>what-bump</em>, scritto in Rust), ma le alternative open-source non mancano.</p>
+
+<p>Basta inserire questi tool nella pipeline di rilascio <em>et voilà</em>, numero di versione deciso automaticamente e changelog generato.</p>
+
+                <br>
+                
+                  <div class="tags">
+                    <strong>Tags:</strong>
+                  
+                    <a href="https://marcodenisi.dev/it/tags/git">git</a>
+                  
+                    <a href="https://marcodenisi.dev/it/tags/semantic-versioning">semantic-versioning</a>
+                  
+                    <a href="https://marcodenisi.dev/it/tags/changelog">changelog</a>
+                  
+                    <a href="https://marcodenisi.dev/it/tags/automation">automation</a>
+                  
+                    <a href="https://marcodenisi.dev/it/tags/cd">cd</a>
+                  
+                  </div>
+                  <br />
+                
+                <p class="back-to-posts"><a href="https://marcodenisi.dev/it/blog">Indietro ai post</a></p>
+            </div>
+            <br>
+            <div class="disqus">
+                
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-143191600-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/languages/go.min.js"></script>
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/languages/yaml.min.js"></script>
+  
+
+  <script type="text/javascript">
+    hljs.initHighlightingOnLoad();
+  </script>
+
+
+
+
+
+</body>
+</html>
+

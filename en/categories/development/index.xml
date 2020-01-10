@@ -6,10 +6,21 @@
     <description>Recent content in Development on Marco Denisi</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>it</language>
-    <lastBuildDate>Tue, 05 Nov 2019 10:26:59 +0100</lastBuildDate>
+    <lastBuildDate>Fri, 10 Jan 2020 10:30:41 +0100</lastBuildDate>
     
 	<atom:link href="https://marcodenisi.dev/en/categories/development/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Why you should use Conventional Commits</title>
+      <link>https://marcodenisi.dev/en/blog/why-you-should-use-conventional-commits/</link>
+      <pubDate>Fri, 10 Jan 2020 10:30:41 +0100</pubDate>
+      
+      <guid>https://marcodenisi.dev/en/blog/why-you-should-use-conventional-commits/</guid>
+      <description>Nowadays, versioning systems are used everywhere to simplify collaboration between developers working on the same codebase. That&amp;rsquo;s great, if it weren&amp;rsquo;t that, in the long run, commits history starts looking like this:
+Has a commit introduced a breaking change? Any fix? Good luck finding the answer just looking at that: you&amp;rsquo;d better start walking in your open space asking who did what.
+From this another problem arises. Let&amp;rsquo;s say you have to decide the software version number.</description>
+    </item>
     
     <item>
       <title>Github Actions: a concrete example with Hugo and Latex</title>
