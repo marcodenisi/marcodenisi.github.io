@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<meta name="author" content="Marco Denisi">
+<meta name="description" content="How many times did you have to integrate an external service? Every day we say sentences like:
+ this HTTP call takes too long this stuff breaks all the times  All these complaints are typical when a remote call should be performed, especially when we have to deal with unresponsive systems, which can cause a cascade effect that can be hard to come back from.
+This is even more true when we have to work with a microservices architecture with synchronous HTTP calls.">
+
+<meta property="og:title" content="Resilience in microservices era" />
+<meta property="og:description" content="How many times did you have to integrate an external service? Every day we say sentences like:
+ this HTTP call takes too long this stuff breaks all the times  All these complaints are typical when a remote call should be performed, especially when we have to deal with unresponsive systems, which can cause a cascade effect that can be hard to come back from.
+This is even more true when we have to work with a microservices architecture with synchronous HTTP calls." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://marcodenisi.dev/en/blog/resilience-in-microservices-era/" />
+<meta property="article:published_time" content="2020-03-15T12:21:26&#43;01:00"/>
+<meta property="article:modified_time" content="2020-03-15T12:21:26&#43;01:00"/>
+
+
+<script type="application/ld+json">
+    {
+        "@context" : "http://schema.org",
+        "@type" : "BlogPosting",
+        "mainEntityOfPage": {
+             "@type": "WebPage",
+             "@id": "https://marcodenisi.dev"
+        },
+        "articleSection" : "blog",
+        "name" : "Resilience in microservices era",
+        "headline" : "Resilience in microservices era",
+        "description" : "How many times did you have to integrate an external service? Every day we say sentences like:
+ this HTTP call takes too long this stuff breaks all the times  All these complaints are typical when a remote call should be performed, especially when we have to deal with unresponsive systems, which can cause a cascade effect that can be hard to come back from.
+This is even more true when we have to work with a microservices architecture with synchronous HTTP calls.",
+        "inLanguage" : "en",
+        "author" : "Marco Denisi",
+        "creator" : "Marco Denisi",
+        "publisher": "Marco Denisi",
+        "accountablePerson" : "Marco Denisi",
+        "copyrightHolder" : "Marco Denisi",
+        "copyrightYear" : "2020",
+        "datePublished": "2020-03-15 12:21:26 &#43;0100 &#43;0100",
+        "dateModified" : "2020-03-15 12:21:26 &#43;0100 &#43;0100",
+        "url" : "https://marcodenisi.dev/en/blog/resilience-in-microservices-era/",
+        "wordCount" : "578",
+        "keywords" : [ "resilience4j","java","patterns","circuit-breaker","Blog" ]
+    }
+    </script>
+<title>
+
+
+     Resilience in microservices era 
+
+</title>
+<link rel="canonical" href="https://marcodenisi.dev/en/blog/resilience-in-microservices-era/">
+
+
+
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/default.min.css">
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Ubuntu+Mono:400,400i,700,700i|Raleway:500">
+
+
+
+    
+    <link rel="stylesheet" href="https://marcodenisi.dev/css/reset.css?t=2020-03-15%2015%3a05%3a08.007193182%20%2b0000%20UTC%20m%3d%2b0.104205368">
+    <link rel="stylesheet" href="https://marcodenisi.dev/css/pygments.css?t=2020-03-15%2015%3a05%3a08.007193182%20%2b0000%20UTC%20m%3d%2b0.104205368">
+    <link rel="stylesheet" href="https://marcodenisi.dev/css/main.css?t=2020-03-15%2015%3a05%3a08.007193182%20%2b0000%20UTC%20m%3d%2b0.104205368">
+    
+        <link rel="stylesheet" href="https://marcodenisi.dev/css/override.css?t=2020-03-15%2015%3a05%3a08.007193182%20%2b0000%20UTC%20m%3d%2b0.104205368">
+    
+
+
+
+
+<link rel="shortcut icon"
+
+    href="https://marcodenisi.dev/img/favicon/favicon.ico"
+
+>
+
+
+
+
+
+
+
+
+</head>
+
+
+<body lang="it">
+
+<section class="header">
+    <div class="container">
+        <div class="content">
+            
+                
+                
+                
+                
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                
+                <a href="https://marcodenisi.dev/en/"><img class="avatar" src="https://marcodenisi.dev/img/profile_square_small.png" srcset="https://marcodenisi.dev/img/profile_square_small.png 1x"></a>
+            
+            <a href="https://marcodenisi.dev/en/"><div class="name">Marco Denisi</div></a>
+            
+            <nav>
+                <ul>
+                    
+                        <li class="nav-blog"><a href="https://marcodenisi.dev/en/blog/"><span>Blog</span></a></li>
+                    
+                        <li class="nav-about"><a href="https://marcodenisi.dev/en/about/"><span>About</span></a></li>
+                    
+                </ul>
+            </nav>
+        </div>
+    </div>
+</section>
+
+<section class="icons">
+    <div class="container">
+        <div class="content">
+        
+            <a href="//github.com/marcodenisi" target="_blank" rel="noopener"><img class="icon" src="https://marcodenisi.dev/img/github.svg" alt="github" /></a>
+        
+
+        
+
+        
+
+	
+
+        
+
+        
+
+        
+            <a href="//linkedin.com/in/marco-denisi" target="_blank" rel="noopener"><img class="icon" src="https://marcodenisi.dev/img/linkedin.svg" alt="linkedin" /></a>
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+            <a href="mailto:marcodenisi35@gmail.com"><img class="icon" src="https://marcodenisi.dev/img/email.svg" alt="email" /></a>
+        
+
+        
+
+        
+            
+                <a href="https://marcodenisi.dev/it/blog/resilienza-nellera-dei-microservizi/"><img class="icon flag" src="https://marcodenisi.dev/img/flags/it.svg"></a>
+            
+        
+        </div>
+    </div>
+</section>
+
+
+<section class="main post non-narrow zero-top-spacing">
+    <div class="container">
+        <div class="content">
+            <div class="front-matter">
+                <div class="title-container">
+                    <div class="page-heading">
+
+    Resilience in microservices era
+
+</div>
+
+                    <div class="initials"><a href="https://marcodenisi.dev">ad</a></div>
+                </div>
+                <div class="meta">
+                    
+                    <div class="date" title='15/03/2020 12:21'>15/03/2020</div>
+                    
+                    
+		    <div class="reading-time"><div class="middot"></div>3 minutes read</div>
+                    
+                </div>
+            </div>
+            <div class="markdown">
+                
+
+<p>How many times did you have to integrate an external service? Every day we say sentences like:</p>
+
+<ul>
+<li>this HTTP call takes too long</li>
+<li>this stuff breaks all the times</li>
+</ul>
+
+<p>All these complaints are typical when a remote call should be performed, especially when we have to deal with unresponsive systems, which can cause a cascade effect that can be hard to come back from.</p>
+
+<p>This is even more true when we have to work with a microservices architecture with synchronous HTTP calls.</p>
+
+<h1 id="resiliency">Resiliency</h1>
+
+<p>This kind of problems will always exist. However, there is a bunch of patterns and practices that can help mitigating their consequences, incrementing our services resilience.</p>
+
+<h2 id="circuit-breaker">Circuit Breaker</h2>
+
+<p>The basic idea behind the circuit breaker is very simple. You wrap a protected function call in a circuit breaker object, which monitors for failures. Once the failures reach a certain threshold, the circuit breaker trips, and all further calls to the circuit breaker return with an error, without the protected call being made at all.</p>
+
+<h2 id="bulkhead">Bulkhead</h2>
+
+<p>Bulkheads in ships separate components or sections of a ship such that if one portion of a ship is breached, flooding can be contained to that section.</p>
+
+<p>The microservice bulkhead pattern is analogous to the bulkhead on a ship: failures in some component of a solution do not propagate to other components.</p>
+
+<h2 id="rete-limiter">Rete Limiter</h2>
+
+<p>Another really simple idea: if multiple calls to a remote service have to be made, you&rsquo;d better split them during a certain range of time to make the external service able to serve all the requests.</p>
+
+<h1 id="an-example-resilience4j">An example: resilience4J</h1>
+
+<p>Complete code is available <a href="https://github.com/marcodenisi/resilience-microservices-era">here</a>.</p>
+
+<p>As stated by the official documentation, <a href="https://github.com/resilience4j/resilience4j">resilience4j</a> is</p>
+
+<blockquote>
+<p>a lightweight, easy-to-use fault tolerance library inspired by Netflix Hystrix, but designed for Java 8 and functional programming.</p>
+</blockquote>
+
+<p>Let&rsquo;s say we have a microservice exposing a <code>GET</code> API <code>/remote</code>, calling an external service:</p>
+
+<div class="mermaid">
+    
+sequenceDiagram
+
+    participant U as User
+    participant RC as ResilientController
+    participant RS as ResilientService
+    participant ES as ExternalService
+    U ->> RC: GET /remote
+    RC ->> RS: remoteCall()
+    RS -->> ES: remoteCall()
+    ES ->> ES: compute
+    ES -->> RS: RemoteCallResult
+    RS ->> RC: RemoteCallResult
+    RC ->> U: RemoteCallResult
+
+</div>
+
+<p>Resilience4J allows us to decorate this call adding all the needed functionalities. Let&rsquo;s say we want to add a <code>CircuitBreaker</code>:</p>
+
+<pre><code class="language-java">@Service
+public class ResilientService {
+
+    @Autowired private ExternalService externalService;
+    @Autowired private CircuitBreaker circuitBreaker;
+
+    public RemoteCallResult getRemote() {
+        return Decorators.ofSupplier(externalService::remoteCall)   // wraps the external call
+                .withCircuitBreaker(circuitBreaker)                 // decorate with a circuit breaker
+                .get();                                             // perform the call
+    }
+}
+</code></pre>
+
+<p>When we will call this method, we have 3 different scenarios, basing on the circuit breaker status:</p>
+
+<ul>
+<li><code>CLOSED</code> status: external call is made</li>
+<li><code>OPEN</code> status: external call is not made, an <code>CallNotPermittedException</code> is thrown</li>
+<li><code>HALF_OPEN</code> status: only a limited amount of calls is made</li>
+</ul>
+
+<p>The circuit breaker can obviously be configured as you wish, just check out the <a href="https://resilience4j.readme.io/docs/circuitbreaker">official documentation</a> for all the details. In my example, I&rsquo;ve written all the configuration needed in a <em>yaml</em> file:</p>
+
+<pre><code class="language-yaml">resilience4j.circuitbreaker:
+    instances:
+        remoteService:                                  // circuit breaker instance name
+            registerHealthIndicator: true
+            slidingWindowType: TIME_BASED               // time based check
+            slidingWindowSize: 10                       // last 10 seconds
+            permittedNumberOfCallsInHalfOpenState: 3
+            minimumNumberOfCalls: 10                    // minimum number of calls to create a statistic
+            waitDurationInOpenState: 30s
+            failureRateThreshold: 50                
+</code></pre>
+
+<h1 id="wrapping-up">Wrapping up</h1>
+
+<p>Introducing patterns like circuit breaker, bulkhead and others allow systems to be more resilient to failures, also putting in place recovering strategies.</p>
+
+<p>Resilience4J is an extremely useful yet simple library to integrate and implement those patterns. Also, it&rsquo;s easy to add Grafana to have a better overall system monitoring.</p>
+
+<script async src="https://unpkg.com/mermaid@8.2.3/dist/mermaid.min.js"></script>
+
+                <br>
+                
+                  <div class="tags">
+                    <strong>Tags:</strong>
+                  
+                    <a href="https://marcodenisi.dev/en/tags/resilience4j">resilience4j</a>
+                  
+                    <a href="https://marcodenisi.dev/en/tags/java">java</a>
+                  
+                    <a href="https://marcodenisi.dev/en/tags/patterns">patterns</a>
+                  
+                    <a href="https://marcodenisi.dev/en/tags/circuit-breaker">circuit-breaker</a>
+                  
+                  </div>
+                  <br />
+                
+                <p class="back-to-posts"><a href="https://marcodenisi.dev/en/blog">Back to posts</a></p>
+            </div>
+            <br>
+            <div class="disqus">
+                
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-143191600-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/languages/go.min.js"></script>
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/languages/yaml.min.js"></script>
+  
+
+  <script type="text/javascript">
+    hljs.initHighlightingOnLoad();
+  </script>
+
+
+
+
+
+</body>
+</html>
+

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Patterns on Marco Denisi</title>
+    <link>https://marcodenisi.dev/it/tags/patterns/</link>
+    <description>Recent content in Patterns on Marco Denisi</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>it</language>
+    <lastBuildDate>Sun, 15 Mar 2020 12:21:26 +0100</lastBuildDate>
+    
+	<atom:link href="https://marcodenisi.dev/it/tags/patterns/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Resilienza nell&#39;era dei microservizi</title>
+      <link>https://marcodenisi.dev/it/blog/resilienza-nellera-dei-microservizi/</link>
+      <pubDate>Sun, 15 Mar 2020 12:21:26 +0100</pubDate>
+      
+      <guid>https://marcodenisi.dev/it/blog/resilienza-nellera-dei-microservizi/</guid>
+      <description>Quante volte è capitato di dover integrare un servizio esterno all&amp;rsquo;interno dei nostri progetti? Sono all&amp;rsquo;ordine del giorno frasi come:
+ la chiamata HTTP ci mette una vita! questa roba si spacca una volta si e l&amp;rsquo;altra pure in produzione andrà giù tutto!  Tutte queste (giuste) lamentele sono tipiche di quando dobbiamo fare chiamate tra macchine remote. Soprattutto quando si ha a che fare con sistemi unresponsive, c&amp;rsquo;è il rischio che finiscano le risorse portando a fallimenti a cascata.</description>
+    </item>
+    
+  </channel>
+</rss>

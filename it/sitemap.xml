@@ -3,6 +3,21 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://marcodenisi.dev/it/blog/resilienza-nellera-dei-microservizi/</loc>
+    <lastmod>2020-03-15T12:21:26+01:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://marcodenisi.dev/en/blog/resilience-in-microservices-era/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="it"
+                href="https://marcodenisi.dev/it/blog/resilienza-nellera-dei-microservizi/"
+                />
+  </url>
+  
+  <url>
     <loc>https://marcodenisi.dev/it/blog/perch%C3%A8-dovresti-usare-conventional-commits/</loc>
     <lastmod>2020-01-10T10:30:41+01:00</lastmod>
     <xhtml:link
@@ -157,8 +172,24 @@
   </url>
   
   <url>
+    <loc>https://marcodenisi.dev/it/tags/circuit-breaker/</loc>
+    <lastmod>2020-03-15T12:21:26+01:00</lastmod>
+    <priority>0</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://marcodenisi.dev/en/tags/circuit-breaker/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="it"
+                href="https://marcodenisi.dev/it/tags/circuit-breaker/"
+                />
+  </url>
+  
+  <url>
     <loc>https://marcodenisi.dev/it/categories/development/</loc>
-    <lastmod>2020-01-10T10:30:41+01:00</lastmod>
+    <lastmod>2020-03-15T12:21:26+01:00</lastmod>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
@@ -237,6 +268,22 @@
   </url>
   
   <url>
+    <loc>https://marcodenisi.dev/it/tags/java/</loc>
+    <lastmod>2020-03-15T12:21:26+01:00</lastmod>
+    <priority>0</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://marcodenisi.dev/en/tags/java/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="it"
+                href="https://marcodenisi.dev/it/tags/java/"
+                />
+  </url>
+  
+  <url>
     <loc>https://marcodenisi.dev/it/tags/java8/</loc>
     <lastmod>2019-09-26T00:07:46+02:00</lastmod>
     <priority>0</priority>
@@ -270,7 +317,7 @@
   
   <url>
     <loc>https://marcodenisi.dev/it/</loc>
-    <lastmod>2020-01-10T10:30:41+01:00</lastmod>
+    <lastmod>2020-03-15T12:21:26+01:00</lastmod>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
@@ -281,6 +328,38 @@
                 rel="alternate"
                 hreflang="it"
                 href="https://marcodenisi.dev/it/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://marcodenisi.dev/it/tags/patterns/</loc>
+    <lastmod>2020-03-15T12:21:26+01:00</lastmod>
+    <priority>0</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://marcodenisi.dev/en/tags/patterns/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="it"
+                href="https://marcodenisi.dev/it/tags/patterns/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://marcodenisi.dev/it/tags/resilience4j/</loc>
+    <lastmod>2020-03-15T12:21:26+01:00</lastmod>
+    <priority>0</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://marcodenisi.dev/en/tags/resilience4j/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="it"
+                href="https://marcodenisi.dev/it/tags/resilience4j/"
                 />
   </url>
   

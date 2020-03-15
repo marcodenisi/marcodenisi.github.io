@@ -6,10 +6,21 @@
     <description>Recent content on Marco Denisi</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>it</language>
-    <lastBuildDate>Fri, 10 Jan 2020 10:30:41 +0100</lastBuildDate>
+    <lastBuildDate>Sun, 15 Mar 2020 12:21:26 +0100</lastBuildDate>
     
 	<atom:link href="https://marcodenisi.dev/en/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Resilience in microservices era</title>
+      <link>https://marcodenisi.dev/en/blog/resilience-in-microservices-era/</link>
+      <pubDate>Sun, 15 Mar 2020 12:21:26 +0100</pubDate>
+      
+      <guid>https://marcodenisi.dev/en/blog/resilience-in-microservices-era/</guid>
+      <description>How many times did you have to integrate an external service? Every day we say sentences like:
+ this HTTP call takes too long this stuff breaks all the times  All these complaints are typical when a remote call should be performed, especially when we have to deal with unresponsive systems, which can cause a cascade effect that can be hard to come back from.
+This is even more true when we have to work with a microservices architecture with synchronous HTTP calls.</description>
+    </item>
     
     <item>
       <title>Why you should use Conventional Commits</title>
