@@ -12,6 +12,17 @@
     
     
     <item>
+      <title>Business Driven Branching</title>
+      <link>https://marcodenisi.dev/it/blog/business-driven-branching/</link>
+      <pubDate>Tue, 19 May 2020 16:29:13 +0200</pubDate>
+      
+      <guid>https://marcodenisi.dev/it/blog/business-driven-branching/</guid>
+      <description>L&amp;rsquo;ultimo anno e mezzo è stato particolarmente denso dal punto di vista lavorativo. Infatti, il progetto sul quale ho lavorato maggiormente è stato oggetto di un paio di grossi cambiamenti organizzativi che hanno richiesto anche un cambio di paradigma della gestione del codice.
+Oggi vorrei condividere questa mie esperienza focalizzandomi sulla branching strategy.
+Introduzione Git Git è diventato lo standard de facto per i sistemi di versionamento del codice per la sua semplicità.</description>
+    </item>
+    
+    <item>
       <title>Resilienza nell&#39;era dei microservizi</title>
       <link>https://marcodenisi.dev/it/blog/resilienza-nellera-dei-microservizi/</link>
       <pubDate>Sun, 15 Mar 2020 12:21:26 +0100</pubDate>

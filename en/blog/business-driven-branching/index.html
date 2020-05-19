@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<meta name="author" content="Marco Denisi">
+<meta name="description" content="The last year and a half has been particularly demanding from the business point of view. In fact, the project on which I worked on has seen a couple of big organizational changes that required also a change in the way the codebase was managed.
+Today I&rsquo;d like to share this experience with a particular focus on the branching strategy.
+Intro Git Git has become the de facto standard for version control systems in the software industry.">
+
+<meta property="og:title" content="Business Driven Branching" />
+<meta property="og:description" content="The last year and a half has been particularly demanding from the business point of view. In fact, the project on which I worked on has seen a couple of big organizational changes that required also a change in the way the codebase was managed.
+Today I&rsquo;d like to share this experience with a particular focus on the branching strategy.
+Intro Git Git has become the de facto standard for version control systems in the software industry." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://marcodenisi.dev/en/blog/business-driven-branching/" />
+<meta property="article:published_time" content="2020-05-19T16:29:13&#43;02:00"/>
+<meta property="article:modified_time" content="2020-05-19T16:29:13&#43;02:00"/>
+
+
+<script type="application/ld+json">
+    {
+        "@context" : "http://schema.org",
+        "@type" : "BlogPosting",
+        "mainEntityOfPage": {
+             "@type": "WebPage",
+             "@id": "https://marcodenisi.dev"
+        },
+        "articleSection" : "blog",
+        "name" : "Business Driven Branching",
+        "headline" : "Business Driven Branching",
+        "description" : "The last year and a half has been particularly demanding from the business point of view. In fact, the project on which I worked on has seen a couple of big organizational changes that required also a change in the way the codebase was managed.
+Today I&rsquo;d like to share this experience with a particular focus on the branching strategy.
+Intro Git Git has become the de facto standard for version control systems in the software industry.",
+        "inLanguage" : "en",
+        "author" : "Marco Denisi",
+        "creator" : "Marco Denisi",
+        "publisher": "Marco Denisi",
+        "accountablePerson" : "Marco Denisi",
+        "copyrightHolder" : "Marco Denisi",
+        "copyrightYear" : "2020",
+        "datePublished": "2020-05-19 16:29:13 &#43;0200 &#43;0200",
+        "dateModified" : "2020-05-19 16:29:13 &#43;0200 &#43;0200",
+        "url" : "https://marcodenisi.dev/en/blog/business-driven-branching/",
+        "wordCount" : "774",
+        "keywords" : [ "Blog" ]
+    }
+    </script>
+<title>
+
+
+     Business Driven Branching 
+
+</title>
+<link rel="canonical" href="https://marcodenisi.dev/en/blog/business-driven-branching/">
+
+
+
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/default.min.css">
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Ubuntu+Mono:400,400i,700,700i|Raleway:500">
+
+
+
+    
+    <link rel="stylesheet" href="https://marcodenisi.dev/css/reset.css?t=2020-05-19%2016%3a02%3a54.581192176%20%2b0000%20UTC%20m%3d%2b0.116272205">
+    <link rel="stylesheet" href="https://marcodenisi.dev/css/pygments.css?t=2020-05-19%2016%3a02%3a54.581192176%20%2b0000%20UTC%20m%3d%2b0.116272205">
+    <link rel="stylesheet" href="https://marcodenisi.dev/css/main.css?t=2020-05-19%2016%3a02%3a54.581192176%20%2b0000%20UTC%20m%3d%2b0.116272205">
+    
+        <link rel="stylesheet" href="https://marcodenisi.dev/css/override.css?t=2020-05-19%2016%3a02%3a54.581192176%20%2b0000%20UTC%20m%3d%2b0.116272205">
+    
+
+
+
+
+<link rel="shortcut icon"
+
+    href="https://marcodenisi.dev/img/favicon/favicon.ico"
+
+>
+
+
+
+
+
+
+
+
+</head>
+
+
+<body lang="it">
+
+<section class="header">
+    <div class="container">
+        <div class="content">
+            
+                
+                
+                
+                
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                
+                <a href="https://marcodenisi.dev/en/"><img class="avatar" src="https://marcodenisi.dev/img/profile_square_small.png" srcset="https://marcodenisi.dev/img/profile_square_small.png 1x"></a>
+            
+            <a href="https://marcodenisi.dev/en/"><div class="name">Marco Denisi</div></a>
+            
+            <nav>
+                <ul>
+                    
+                        <li class="nav-blog"><a href="https://marcodenisi.dev/en/blog/"><span>Blog</span></a></li>
+                    
+                        <li class="nav-about"><a href="https://marcodenisi.dev/en/about/"><span>About</span></a></li>
+                    
+                </ul>
+            </nav>
+        </div>
+    </div>
+</section>
+
+<section class="icons">
+    <div class="container">
+        <div class="content">
+        
+            <a href="//github.com/marcodenisi" target="_blank" rel="noopener"><img class="icon" src="https://marcodenisi.dev/img/github.svg" alt="github" /></a>
+        
+
+        
+
+        
+
+	
+
+        
+
+        
+
+        
+            <a href="//linkedin.com/in/marco-denisi" target="_blank" rel="noopener"><img class="icon" src="https://marcodenisi.dev/img/linkedin.svg" alt="linkedin" /></a>
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+            <a href="mailto:marcodenisi35@gmail.com"><img class="icon" src="https://marcodenisi.dev/img/email.svg" alt="email" /></a>
+        
+
+        
+
+        
+            
+                <a href="https://marcodenisi.dev/it/blog/business-driven-branching/"><img class="icon flag" src="https://marcodenisi.dev/img/flags/it.svg"></a>
+            
+        
+        </div>
+    </div>
+</section>
+
+
+<section class="main post non-narrow zero-top-spacing">
+    <div class="container">
+        <div class="content">
+            <div class="front-matter">
+                <div class="title-container">
+                    <div class="page-heading">
+
+    Business Driven Branching
+
+</div>
+
+                    <div class="initials"><a href="https://marcodenisi.dev">ad</a></div>
+                </div>
+                <div class="meta">
+                    
+                    <div class="date" title='19/05/2020 16:29'>19/05/2020</div>
+                    
+                    
+		    <div class="reading-time"><div class="middot"></div>4 minutes read</div>
+                    
+                </div>
+            </div>
+            <div class="markdown">
+                
+
+<p>The last year and a half has been particularly demanding from the business point of view. In fact, the project on which I worked on has seen a couple of big organizational changes that required also a change in the way the codebase was managed.</p>
+
+<p>Today I&rsquo;d like to share this experience with a particular focus on the <em>branching strategy</em>.</p>
+
+<h1 id="intro">Intro</h1>
+
+<h2 id="git">Git</h2>
+
+<p>Git has become the de facto standard for version control systems in the software industry. Git is a simple mechanism with few critical concepts:</p>
+
+<ul>
+<li><strong>blob</strong>: a binary representation of a file</li>
+<li><strong>tree</strong>: the binary representation of a folder. It&rsquo;s another binary file containing references to other blobs and trees</li>
+<li><strong>commit</strong>: a <em>snapshot</em> of the state of the files in a repository, in a given instant</li>
+</ul>
+
+<p>What really makes commits valuable is their relationships to other commits. Those relationships generate the notion of <em>history</em> and <em>revision</em>.</p>
+
+<h2 id="branching-strategy">Branching strategy</h2>
+
+<p>A <em>branch</em> is nothing but a reference to a commit. Their creation and merge are really simple. Thus, branches can rapidly get out of hand. In this scenario, <em>branching strategies</em> come into play.</p>
+
+<p>These strategies are rules developers decide to adopt on:</p>
+
+<ul>
+<li>When a developer should branch</li>
+<li>From which branch they should branch off</li>
+<li>When they should merge back</li>
+<li>And to which branch should they merge back</li>
+</ul>
+
+<h1 id="the-divine-comedy-branching-edition">The Divine Comedy: branching edition</h1>
+
+<p>There&rsquo;s an abundance of different strategies, each with its own pros and cons (git flow, GitHub flow, trunk based development, &hellip;). What I want is to describe my journey between the different strategies we adopted, and talking about journeys&hellip;</p>
+
+<p><img src="https://marcodenisi.dev/img/articles/branching/dante.png" alt="Dante Alighieri" /></p>
+
+<p>I&rsquo;ve identified three phases that, in my head, automatically associate with the three parts forming Dante&rsquo;s &ldquo;Divine Comedy&rdquo;. Let&rsquo;s jump in the first phase.</p>
+
+<h2 id="phase-1-purgatory">Phase 1 - Purgatory</h2>
+
+<p>In the initial phase of the project, many teams were working on a single codebase. We didn&rsquo;t have a production environment but only a development environment used to test backend and frontend integrations.</p>
+
+<p>Business gave requirements on new features that were released in that development environment. Our branching strategy was:</p>
+
+<ul>
+<li>a single development branch (named develop) - <em>master</em> was in place but not actively used</li>
+<li>new features developed on branches created from develop</li>
+</ul>
+
+<p><img src="https://marcodenisi.dev/img/articles/branching/fase1.png" alt="Phase 1" /></p>
+
+<p>Really straight-forward, but effective. In fact, I&rsquo;ve associated it to the purgatory: on one hand the lack of strict rules make the process really smooth, on the other hand there was no uniformity between teams.</p>
+
+<h2 id="phase-2-paradise">Phase 2 - Paradise</h2>
+
+<p>We soon realized that the previous model had a lot of limitations. The need of having a unique vision over the product brought to the creation of one big team working on the same codebase.</p>
+
+<p>We made the maximum effort: business gave requirements continuously. We also put in place different environments: test, stage and production.</p>
+
+<p>To better support this change we adopted a strategy really similar to a standard <a href="https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow">git flow</a>:</p>
+
+<ul>
+<li><em>develop</em> is the development branch</li>
+<li><em>master</em> contains production code</li>
+<li><em>feature branches</em> to develop new features</li>
+<li><em>release branches</em> to identify release candidates</li>
+</ul>
+
+<p><img src="https://marcodenisi.dev/img/articles/branching/fase2.png" alt="Phase 2" /></p>
+
+<p>Maybe not the true paradise, but we were almost there. Well defined rules allowed developers to concentrate on the development. We were also supported by robust CI/CD processes.</p>
+
+<h2 id="phase-3-hell">Phase 3 - Hell</h2>
+
+<p>During the final stage of the project the way business people gave requirements changed.</p>
+
+<p>The main problem was that different requirements had to go into production with different timings, even if they had to be developed at the same time.</p>
+
+<p>Thus, the branching model changed a lot. It&rsquo;s something like the <em>Release Train</em> model Martin Fowler explained <a href="https://martinfowler.com/articles/branching-patterns.html#release-train">here</a>:</p>
+
+<ul>
+<li><em>release/DD_MM_YYYY</em> is the branch in which features to be released on date DD_MM_YYYY are developed. We can have many of them at the same time</li>
+<li><em>develop</em> is used for future functionalities (that is, features outside the planned releases)</li>
+</ul>
+
+<p><img src="https://marcodenisi.dev/img/articles/branching/fase3.png" alt="Phase 3" /></p>
+
+<p>The strategy is crystal clear, but completely different with respect to the previous one. And that&rsquo;s why this is the hell for developers: errors and misunderstandings are really likely to happen. It takes time to take all the developers on the same page.
+CI/CD and environments changed as well.</p>
+
+<h1 id="conclusions-back-to-paradise">Conclusions - back to Paradise?</h1>
+
+<p>That&rsquo;s the end of my journey. Probably, there will be another stage in which we will proceed splitting the monolith into micro services. Teams organization will change as well to compose the so called <em>feature teams</em>. This will improve flows and will resolve a lot of the problem we had. But this is another story&hellip;</p>
+
+<p><img src="https://marcodenisi.dev/img/articles/branching/storia_infinita.png" alt="The Neverending Story" /></p>
+
+<p>What I learned is that business choices impact significantly technical matters. Thus, all the kind of changes I described in the article should be considered carefully and should not happen so often. Not only as a matter of costs, but also to avoid developers headaches.</p>
+
+                <br>
+                
+                <p class="back-to-posts"><a href="https://marcodenisi.dev/en/blog">Back to posts</a></p>
+            </div>
+            <br>
+            <div class="disqus">
+                
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-143191600-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/languages/go.min.js"></script>
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/languages/yaml.min.js"></script>
+  
+
+  <script type="text/javascript">
+    hljs.initHighlightingOnLoad();
+  </script>
+
+
+
+
+
+</body>
+</html>
+

@@ -3,6 +3,21 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://marcodenisi.dev/it/blog/business-driven-branching/</loc>
+    <lastmod>2020-05-19T16:29:13+02:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://marcodenisi.dev/en/blog/business-driven-branching/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="it"
+                href="https://marcodenisi.dev/it/blog/business-driven-branching/"
+                />
+  </url>
+  
+  <url>
     <loc>https://marcodenisi.dev/it/blog/resilienza-nellera-dei-microservizi/</loc>
     <lastmod>2020-03-15T12:21:26+01:00</lastmod>
     <xhtml:link
@@ -317,7 +332,7 @@
   
   <url>
     <loc>https://marcodenisi.dev/it/</loc>
-    <lastmod>2020-03-15T12:21:26+01:00</lastmod>
+    <lastmod>2020-05-19T16:29:13+02:00</lastmod>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
