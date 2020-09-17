@@ -11,16 +11,16 @@
 <meta name="author" content="Marco Denisi">
 <meta name="description" content="During last weeks, I&rsquo;ve worked a lot with AWS Lambda.
 The main challenge I had was to look for a method to locally test those functions. Of course, it is possible to do some partial code execution as part of unit/integration test setup, but that won’t be close enough to production setup.
-I&rsquo;d like to build a sort of how-to guide in order to have a reference in the future.">
+I&rsquo;d like to build a sort of how-to guide in order to have a reference in the future. To do so, I have to:">
 
 <meta property="og:title" content="Lambda Step by Step" />
 <meta property="og:description" content="During last weeks, I&rsquo;ve worked a lot with AWS Lambda.
 The main challenge I had was to look for a method to locally test those functions. Of course, it is possible to do some partial code execution as part of unit/integration test setup, but that won’t be close enough to production setup.
-I&rsquo;d like to build a sort of how-to guide in order to have a reference in the future." />
+I&rsquo;d like to build a sort of how-to guide in order to have a reference in the future. To do so, I have to:" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://marcodenisi.dev/en/blog/lambda-step-by-step/" />
-<meta property="article:published_time" content="2019-09-26T00:07:46&#43;02:00"/>
-<meta property="article:modified_time" content="2019-09-26T00:07:46&#43;02:00"/>
+<meta property="article:published_time" content="2019-09-26T00:07:46+02:00" />
+<meta property="article:modified_time" content="2019-09-26T00:07:46+02:00" />
 
 
 <script type="application/ld+json">
@@ -29,14 +29,12 @@ I&rsquo;d like to build a sort of how-to guide in order to have a reference in t
         "@type" : "BlogPosting",
         "mainEntityOfPage": {
              "@type": "WebPage",
-             "@id": "https://marcodenisi.dev"
+             "@id": "https:\/\/marcodenisi.dev"
         },
         "articleSection" : "blog",
         "name" : "Lambda Step by Step",
         "headline" : "Lambda Step by Step",
-        "description" : "During last weeks, I&rsquo;ve worked a lot with AWS Lambda.
-The main challenge I had was to look for a method to locally test those functions. Of course, it is possible to do some partial code execution as part of unit/integration test setup, but that won’t be close enough to production setup.
-I&rsquo;d like to build a sort of how-to guide in order to have a reference in the future.",
+        "description" : "During last weeks, I\u0026rsquo;ve worked a lot with AWS Lambda.\nThe main challenge I had was to look for a method to locally test those functions. Of course, it is possible to do some partial code execution as part of unit\/integration test setup, but that won’t be close enough to production setup.\nI\u0026rsquo;d like to build a sort of how-to guide in order to have a reference in the future. To do so, I have to:",
         "inLanguage" : "en",
         "author" : "Marco Denisi",
         "creator" : "Marco Denisi",
@@ -44,10 +42,10 @@ I&rsquo;d like to build a sort of how-to guide in order to have a reference in t
         "accountablePerson" : "Marco Denisi",
         "copyrightHolder" : "Marco Denisi",
         "copyrightYear" : "2019",
-        "datePublished": "2019-09-26 00:07:46 &#43;0200 &#43;0200",
-        "dateModified" : "2019-09-26 00:07:46 &#43;0200 &#43;0200",
-        "url" : "https://marcodenisi.dev/en/blog/lambda-step-by-step/",
-        "wordCount" : "625",
+        "datePublished": "2019-09-26 00:07:46 \u002b0200 \u002b0200",
+        "dateModified" : "2019-09-26 00:07:46 \u002b0200 \u002b0200",
+        "url" : "https:\/\/marcodenisi.dev\/en\/blog\/lambda-step-by-step\/",
+        "wordCount" : "595",
         "keywords" : [ "aws","lambda","sam","java8","Blog" ]
     }
     </script>
@@ -75,11 +73,11 @@ I&rsquo;d like to build a sort of how-to guide in order to have a reference in t
 
 
     
-    <link rel="stylesheet" href="https://marcodenisi.dev/css/reset.css?t=2020-08-07%2016%3a42%3a15.510667206%20%2b0000%20UTC%20m%3d%2b0.134601310">
-    <link rel="stylesheet" href="https://marcodenisi.dev/css/pygments.css?t=2020-08-07%2016%3a42%3a15.510667206%20%2b0000%20UTC%20m%3d%2b0.134601310">
-    <link rel="stylesheet" href="https://marcodenisi.dev/css/main.css?t=2020-08-07%2016%3a42%3a15.510667206%20%2b0000%20UTC%20m%3d%2b0.134601310">
+    <link rel="stylesheet" href="https://marcodenisi.dev/css/reset.css?t=2020-09-17%2021%3a13%3a40.76587876%20%2b0000%20UTC%20m%3d%2b0.123076694">
+    <link rel="stylesheet" href="https://marcodenisi.dev/css/pygments.css?t=2020-09-17%2021%3a13%3a40.76587876%20%2b0000%20UTC%20m%3d%2b0.123076694">
+    <link rel="stylesheet" href="https://marcodenisi.dev/css/main.css?t=2020-09-17%2021%3a13%3a40.76587876%20%2b0000%20UTC%20m%3d%2b0.123076694">
     
-        <link rel="stylesheet" href="https://marcodenisi.dev/css/override.css?t=2020-08-07%2016%3a42%3a15.510667206%20%2b0000%20UTC%20m%3d%2b0.134601310">
+        <link rel="stylesheet" href="https://marcodenisi.dev/css/override.css?t=2020-09-17%2021%3a13%3a40.76587876%20%2b0000%20UTC%20m%3d%2b0.123076694">
     
 
 
@@ -212,39 +210,23 @@ I&rsquo;d like to build a sort of how-to guide in order to have a reference in t
                 </div>
             </div>
             <div class="markdown">
-                
-
-<p>During last weeks, I&rsquo;ve worked a lot with <a href="https://aws.amazon.com/it/lambda/">AWS Lambda</a>.</p>
-
+                <p>During last weeks, I&rsquo;ve worked a lot with <a href="https://aws.amazon.com/it/lambda/">AWS Lambda</a>.</p>
 <p>The main challenge I had was to look for a method to locally test those functions. Of course, it is possible to do some partial code execution as part of unit/integration test setup, but that won’t be close enough to production setup.</p>
-
 <p>I&rsquo;d like to build a sort of how-to guide in order to have a reference in the future. To do so, I have to:</p>
-
 <ul>
 <li>write a lambda that <em>does stuff</em></li>
 <li>with the help of SAM (and its CLI), invoke and debug the function.</li>
 </ul>
-
 <p>Let&rsquo;s start!</p>
-
 <h1 id="sam">SAM</h1>
-
 <p>SAM (<em>Serverless Application Model</em>) is an open source framework used to define, test and deploy serverless applications. SAM uses a <em>.yaml</em> file (also called <em>template</em>) that is then transformed into an AWS CloudFormation file.</p>
-
 <p>In this scenario, I&rsquo;ll use SAM to define the lambda function endpoint. Using its CLI, I&rsquo;ll also be able to invoke (and debug) it locally.</p>
-
 <p><a href="https://aws.amazon.com/it/serverless/sam/">Here</a> is the SAM official documentation.</p>
-
 <h1 id="lambda-creation">Lambda Creation</h1>
-
 <p>SAM CLI has a really helpful function to create a lambda stub:</p>
-
-<pre><code class="language-bash">sam init --runtime java8 --name StuffApi
-</code></pre>
-
-<p>This command creates an entire maven project with some example classes. The following structure is created:</p>
-
-<pre><code class="language-bash">StuffApi
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">sam init --runtime java8 --name StuffApi
+</code></pre></div><p>This command creates an entire maven project with some example classes. The following structure is created:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">StuffApi
 ├── README.md 
 ├── pom.xml
 ├── src
@@ -253,95 +235,67 @@ I&rsquo;d like to build a sort of how-to guide in order to have a reference in t
 │   │       └── helloworld
 │   │           ├── App.java              &lt;-- Lambda
 │   │           └── GatewayResponse.java  &lt;-- API Gateway Response POJO 
-│   └── test
+│   └── <span class="nb">test</span>
 │       └── java
 │           └── helloworld
 │               └── AppTest.java
 └── template.yaml
-</code></pre>
-
-<p>I&rsquo;d suggest you to take a look at the <code>README.md</code>, which contains a lot of useful indications on next steps.</p>
-
+</code></pre></div><p>I&rsquo;d suggest you to take a look at the <code>README.md</code>, which contains a lot of useful indications on next steps.</p>
 <p>Now, it&rsquo;s time to code. Let&rsquo;s write a simple lambda function returning a <code>User</code> object:</p>
-
-<pre><code class="language-java">public class StuffHandler implements RequestHandler&lt;Void, GatewayResponse&lt;UserDto&gt;&gt; {
-    @Override
-    public GatewayResponse&lt;UserDto&gt; handleRequest(final Void input, final Context context) {
-        Map&lt;String, String&gt; headers = new HashMap&lt;&gt;();
-        headers.put(&quot;Content-Type&quot;, &quot;application/json&quot;);
-        return new GatewayResponse&lt;&gt;(new UserDto.UserDtoBuilder().setEmail(&quot;foo@bar.com&quot;).setUsername(&quot;foobar&quot;).build(),
-                headers,
-                200);
-    }
-}
-</code></pre>
-
-<p>The response is wrapped inside a <code>GatewayResponse</code> object. It contains:</p>
-
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">StuffHandler</span> <span class="kd">implements</span> <span class="n">RequestHandler</span><span class="o">&lt;</span><span class="n">Void</span><span class="o">,</span> <span class="n">GatewayResponse</span><span class="o">&lt;</span><span class="n">UserDto</span><span class="o">&gt;&gt;</span> <span class="o">{</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="n">GatewayResponse</span><span class="o">&lt;</span><span class="n">UserDto</span><span class="o">&gt;</span> <span class="nf">handleRequest</span><span class="o">(</span><span class="kd">final</span> <span class="n">Void</span> <span class="n">input</span><span class="o">,</span> <span class="kd">final</span> <span class="n">Context</span> <span class="n">context</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="n">headers</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;&gt;();</span>
+        <span class="n">headers</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&#34;Content-Type&#34;</span><span class="o">,</span> <span class="s">&#34;application/json&#34;</span><span class="o">);</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="n">GatewayResponse</span><span class="o">&lt;&gt;(</span><span class="k">new</span> <span class="n">UserDto</span><span class="o">.</span><span class="na">UserDtoBuilder</span><span class="o">().</span><span class="na">setEmail</span><span class="o">(</span><span class="s">&#34;foo@bar.com&#34;</span><span class="o">).</span><span class="na">setUsername</span><span class="o">(</span><span class="s">&#34;foobar&#34;</span><span class="o">).</span><span class="na">build</span><span class="o">(),</span>
+                <span class="n">headers</span><span class="o">,</span>
+                <span class="n">200</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div><p>The response is wrapped inside a <code>GatewayResponse</code> object. It contains:</p>
 <ul>
 <li><code>body</code>: the actual lambda response</li>
 <li><code>headers</code>: custom response headers (e.g. <code>Content-Type</code>)</li>
 <li><code>statusCode</code>: the response HTTP code (e.g. 200)</li>
 </ul>
-
 <h1 id="sam-template-creation">SAM Template Creation</h1>
-
 <p>Let&rsquo;s move on to the most interesting thing, the SAM template. Here&rsquo;s the first template snippet:</p>
-
-<pre><code class="language-yaml">AWSTemplateFormatVersion: '2010-09-09'
-Transform: AWS::Serverless-2016-10-31
-Description: &gt;
-    StuffApi
-    Sample SAM Template for StuffApi
-Globals:
-    Function:
-        Timeout: 20
-</code></pre>
-
-<p>Here we can found generic information that SAM uses to parse the template (e.g. <code>AWSTemplateFormatVersion</code>). Then we have the <code>Globals</code> section: all lambda global variables are defined here.</p>
-
-<pre><code class="language-yaml">Resources:
-  StuffFunction:
-        Type: AWS::Serverless::Function
-        Properties:
-            CodeUri: target/StuffApi-1.0.jar
-            Handler: dev.marcodenisi.stuff.StuffHandler::handleRequest
-            Runtime: java8
-            Events:
-                Stuff:
-                    Type: Api
-                    Properties:
-                        Path: /stuff
-                        Method: get
-</code></pre>
-
-<p>In this second section, the actual <em>Lambda Function</em> is defined. We name it (<code>StuffFunction</code>) and we define the <em>jar</em> containing its source code along with the <code>handler</code> class.</p>
-
+<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">AWSTemplateFormatVersion</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;2010-09-09&#39;</span><span class="w">
+</span><span class="w"></span><span class="nt">Transform</span><span class="p">:</span><span class="w"> </span><span class="l">AWS::Serverless-2016-10-31</span><span class="w">
+</span><span class="w"></span><span class="nt">Description</span><span class="p">:</span><span class="w"> </span><span class="sd">&gt;
+</span><span class="sd">    StuffApi
+</span><span class="sd">    Sample SAM Template for StuffApi</span><span class="w">
+</span><span class="w"></span><span class="nt">Globals</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="nt">Function</span><span class="p">:</span><span class="w">
+</span><span class="w">        </span><span class="nt">Timeout</span><span class="p">:</span><span class="w"> </span><span class="m">20</span><span class="w">
+</span></code></pre></div><p>Here we can found generic information that SAM uses to parse the template (e.g. <code>AWSTemplateFormatVersion</code>). Then we have the <code>Globals</code> section: all lambda global variables are defined here.</p>
+<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">Resources</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">StuffFunction</span><span class="p">:</span><span class="w">
+</span><span class="w">        </span><span class="nt">Type</span><span class="p">:</span><span class="w"> </span><span class="l">AWS::Serverless::Function</span><span class="w">
+</span><span class="w">        </span><span class="nt">Properties</span><span class="p">:</span><span class="w">
+</span><span class="w">            </span><span class="nt">CodeUri</span><span class="p">:</span><span class="w"> </span><span class="l">target/StuffApi-1.0.jar</span><span class="w">
+</span><span class="w">            </span><span class="nt">Handler</span><span class="p">:</span><span class="w"> </span><span class="l">dev.marcodenisi.stuff.StuffHandler::handleRequest</span><span class="w">
+</span><span class="w">            </span><span class="nt">Runtime</span><span class="p">:</span><span class="w"> </span><span class="l">java8</span><span class="w">
+</span><span class="w">            </span><span class="nt">Events</span><span class="p">:</span><span class="w">
+</span><span class="w">                </span><span class="nt">Stuff</span><span class="p">:</span><span class="w">
+</span><span class="w">                    </span><span class="nt">Type</span><span class="p">:</span><span class="w"> </span><span class="l">Api</span><span class="w">
+</span><span class="w">                    </span><span class="nt">Properties</span><span class="p">:</span><span class="w">
+</span><span class="w">                        </span><span class="nt">Path</span><span class="p">:</span><span class="w"> </span><span class="l">/stuff</span><span class="w">
+</span><span class="w">                        </span><span class="nt">Method</span><span class="p">:</span><span class="w"> </span><span class="l">get</span><span class="w">
+</span></code></pre></div><p>In this second section, the actual <em>Lambda Function</em> is defined. We name it (<code>StuffFunction</code>) and we define the <em>jar</em> containing its source code along with the <code>handler</code> class.</p>
 <p>Under <code>Events</code>, we define an API Gateway (<code>Type: Api</code>) responding to HTTP GET calls (<code>Method: get</code>) at the <em>path</em> <code>/stuff</code>.</p>
-
 <h1 id="invoking-and-debugging">Invoking and debugging</h1>
-
 <p>First things first, we have to package the lambda source code. I&rsquo;m using Java and Maven, so I have to run the <code>mvn package</code> command to create the <em>jar</em>.</p>
-
 <p>To invoke the lambda, just run SAM CLI <code>invoke</code> command:</p>
-
-<pre><code class="language-bash">sam local invoke &quot;StuffFunction&quot; --no-event
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">sam <span class="nb">local</span> invoke <span class="s2">&#34;StuffFunction&#34;</span> --no-event
 ... // service logs
-{&quot;body&quot;:{&quot;username&quot;:&quot;foobar&quot;,&quot;email&quot;:&quot;foo@bar.com&quot;},&quot;headers&quot;:{&quot;Content-Type&quot;:&quot;application/json&quot;},&quot;statusCode&quot;:200}
-</code></pre>
-
-<p>This command does nothing but create a small docker container. In fact, the first run will be quite slow because of the docker image download. Next runs will be faster. <a href="https://hub.docker.com/r/lambci/lambda/">Here</a> is the docker image documentation.</p>
-
+<span class="o">{</span><span class="s2">&#34;body&#34;</span>:<span class="o">{</span><span class="s2">&#34;username&#34;</span>:<span class="s2">&#34;foobar&#34;</span>,<span class="s2">&#34;email&#34;</span>:<span class="s2">&#34;foo@bar.com&#34;</span><span class="o">}</span>,<span class="s2">&#34;headers&#34;</span>:<span class="o">{</span><span class="s2">&#34;Content-Type&#34;</span>:<span class="s2">&#34;application/json&#34;</span><span class="o">}</span>,<span class="s2">&#34;statusCode&#34;</span>:200<span class="o">}</span>
+</code></pre></div><p>This command does nothing but create a small docker container. In fact, the first run will be quite slow because of the docker image download. Next runs will be faster. <a href="https://hub.docker.com/r/lambci/lambda/">Here</a> is the docker image documentation.</p>
 <p>The <code>--no-event</code> option specifies that the lambda function won&rsquo;t accept anything in input. In the case input events are needed, the <code>sam local generate-event</code> command comes in handy.</p>
-
 <p>To debug, just add the <code>-d</code> flag:</p>
-
-<pre><code class="language-bash">sam local invoke &quot;StuffFunction&quot; --no-event -d 5858
-</code></pre>
-
-<p>In this way, the lambda function won&rsquo;t be executed until a debugger is attached to the specified port (5858 in the example).</p>
-
-<p><img src="https://marcodenisi.dev/gifs/thats_all_folks.gif" alt="That's all folks!" /></p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">sam <span class="nb">local</span> invoke <span class="s2">&#34;StuffFunction&#34;</span> --no-event -d <span class="m">5858</span>
+</code></pre></div><p>In this way, the lambda function won&rsquo;t be executed until a debugger is attached to the specified port (5858 in the example).</p>
+<p><img src="https://marcodenisi.dev/gifs/thats_all_folks.gif" alt="That&rsquo;s all folks!"></p>
 
                 <br>
                 

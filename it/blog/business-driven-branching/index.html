@@ -19,8 +19,8 @@ Oggi vorrei condividere questa mie esperienza focalizzandomi sulla branching str
 Introduzione Git Git è diventato lo standard de facto per i sistemi di versionamento del codice per la sua semplicità." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://marcodenisi.dev/it/blog/business-driven-branching/" />
-<meta property="article:published_time" content="2020-05-19T16:29:13&#43;02:00"/>
-<meta property="article:modified_time" content="2020-05-19T16:29:13&#43;02:00"/>
+<meta property="article:published_time" content="2020-05-19T16:29:13+02:00" />
+<meta property="article:modified_time" content="2020-05-19T16:29:13+02:00" />
 
 
 <script type="application/ld+json">
@@ -29,14 +29,12 @@ Introduzione Git Git è diventato lo standard de facto per i sistemi di versiona
         "@type" : "BlogPosting",
         "mainEntityOfPage": {
              "@type": "WebPage",
-             "@id": "https://marcodenisi.dev"
+             "@id": "https:\/\/marcodenisi.dev"
         },
         "articleSection" : "blog",
         "name" : "Business Driven Branching",
         "headline" : "Business Driven Branching",
-        "description" : "L&rsquo;ultimo anno e mezzo è stato particolarmente denso dal punto di vista lavorativo. Infatti, il progetto sul quale ho lavorato maggiormente è stato oggetto di un paio di grossi cambiamenti organizzativi che hanno richiesto anche un cambio di paradigma della gestione del codice.
-Oggi vorrei condividere questa mie esperienza focalizzandomi sulla branching strategy.
-Introduzione Git Git è diventato lo standard de facto per i sistemi di versionamento del codice per la sua semplicità.",
+        "description" : "L\u0026rsquo;ultimo anno e mezzo è stato particolarmente denso dal punto di vista lavorativo. Infatti, il progetto sul quale ho lavorato maggiormente è stato oggetto di un paio di grossi cambiamenti organizzativi che hanno richiesto anche un cambio di paradigma della gestione del codice.\nOggi vorrei condividere questa mie esperienza focalizzandomi sulla branching strategy.\nIntroduzione Git Git è diventato lo standard de facto per i sistemi di versionamento del codice per la sua semplicità.",
         "inLanguage" : "it",
         "author" : "Marco Denisi",
         "creator" : "Marco Denisi",
@@ -44,9 +42,9 @@ Introduzione Git Git è diventato lo standard de facto per i sistemi di versiona
         "accountablePerson" : "Marco Denisi",
         "copyrightHolder" : "Marco Denisi",
         "copyrightYear" : "2020",
-        "datePublished": "2020-05-19 16:29:13 &#43;0200 &#43;0200",
-        "dateModified" : "2020-05-19 16:29:13 &#43;0200 &#43;0200",
-        "url" : "https://marcodenisi.dev/it/blog/business-driven-branching/",
+        "datePublished": "2020-05-19 16:29:13 \u002b0200 \u002b0200",
+        "dateModified" : "2020-05-19 16:29:13 \u002b0200 \u002b0200",
+        "url" : "https:\/\/marcodenisi.dev\/it\/blog\/business-driven-branching\/",
         "wordCount" : "898",
         "keywords" : [ "Blog" ]
     }
@@ -75,11 +73,11 @@ Introduzione Git Git è diventato lo standard de facto per i sistemi di versiona
 
 
     
-    <link rel="stylesheet" href="https://marcodenisi.dev/css/reset.css?t=2020-08-07%2016%3a42%3a15.444927951%20%2b0000%20UTC%20m%3d%2b0.068862155">
-    <link rel="stylesheet" href="https://marcodenisi.dev/css/pygments.css?t=2020-08-07%2016%3a42%3a15.444927951%20%2b0000%20UTC%20m%3d%2b0.068862155">
-    <link rel="stylesheet" href="https://marcodenisi.dev/css/main.css?t=2020-08-07%2016%3a42%3a15.444927951%20%2b0000%20UTC%20m%3d%2b0.068862155">
+    <link rel="stylesheet" href="https://marcodenisi.dev/css/reset.css?t=2020-09-17%2021%3a13%3a40.691354743%20%2b0000%20UTC%20m%3d%2b0.048552677">
+    <link rel="stylesheet" href="https://marcodenisi.dev/css/pygments.css?t=2020-09-17%2021%3a13%3a40.691354743%20%2b0000%20UTC%20m%3d%2b0.048552677">
+    <link rel="stylesheet" href="https://marcodenisi.dev/css/main.css?t=2020-09-17%2021%3a13%3a40.691354743%20%2b0000%20UTC%20m%3d%2b0.048552677">
     
-        <link rel="stylesheet" href="https://marcodenisi.dev/css/override.css?t=2020-08-07%2016%3a42%3a15.444927951%20%2b0000%20UTC%20m%3d%2b0.068862155">
+        <link rel="stylesheet" href="https://marcodenisi.dev/css/override.css?t=2020-09-17%2021%3a13%3a40.691354743%20%2b0000%20UTC%20m%3d%2b0.048552677">
     
 
 
@@ -212,72 +210,45 @@ Introduzione Git Git è diventato lo standard de facto per i sistemi di versiona
                 </div>
             </div>
             <div class="markdown">
-                
-
-<p>L&rsquo;ultimo anno e mezzo è stato particolarmente denso dal punto di vista lavorativo. Infatti, il progetto sul quale ho lavorato maggiormente è stato oggetto di un paio di grossi cambiamenti organizzativi che hanno richiesto anche un cambio di paradigma della gestione del codice.</p>
-
+                <p>L&rsquo;ultimo anno e mezzo è stato particolarmente denso dal punto di vista lavorativo. Infatti, il progetto sul quale ho lavorato maggiormente è stato oggetto di un paio di grossi cambiamenti organizzativi che hanno richiesto anche un cambio di paradigma della gestione del codice.</p>
 <p>Oggi vorrei condividere questa mie esperienza focalizzandomi sulla <em>branching strategy</em>.</p>
-
 <h1 id="introduzione">Introduzione</h1>
-
 <h2 id="git">Git</h2>
-
 <p>Git è diventato lo standard de facto per i sistemi di versionamento del codice per la sua semplicità.
 Infatti, i concetti critici di Git sono pochi:</p>
-
 <ul>
 <li><strong>blob</strong>: è una rappresentazione binaria di un file</li>
 <li><strong>tree</strong>: è una rappresentazione di una cartella. In sintesi, un altro file binario che contiene referenze a blob ed altri tree</li>
 <li><strong>commit</strong>: è uno <em>snapshot</em> dello stato dei file in un repository in un istante</li>
 </ul>
-
 <p>Quello che rende il concetto di commit così importante è la relazione con altri commit. Questa relazione genera i concetti di <em>history</em> e di <em>revision</em>.</p>
-
 <h2 id="branching-strategy">Branching strategy</h2>
-
 <p>Un <em>branch</em> non è nient&rsquo;altro che una referenza ad un commit. La loro creazione è un processo molto semplice, così come il loro <em>merge</em>. Questo può portare ad una proliferazione di branch all&rsquo;interno di un <em>repository</em>. Ed è qui che entrano in gioco le <em>branching strategies</em>.</p>
-
 <p>Queste strategie sono delle regole che gli sviluppatori si danno su:</p>
-
 <ul>
 <li>quando si deve creare un branch</li>
 <li>da quale branch si deve partire per la creazione di un nuovo branch</li>
 <li>quando si deve effettuare il <em>merge back</em></li>
 <li>su quale branch si deve fare il <em>merge back</em></li>
 </ul>
-
 <h1 id="la-divina-commedia-branching-edition">La Divina Commedia: branching edition</h1>
-
-<p>Esiste una pletora di strategie diverse, ognuna con i suoi pro e contro (git flow, GitHub flow, trunk based development, &hellip;). Quello che voglio descrivere è un po&rsquo; il mio viaggio tra le strategie che abbiamo adottato, e parlando di viaggi&hellip;</p>
-
-<p><img src="https://marcodenisi.dev/img/articles/branching/dante.png" alt="Dante Alighieri" /></p>
-
+<p>Esiste una pletora di strategie diverse, ognuna con i suoi pro e contro (git flow, GitHub flow, trunk based development, &hellip;). Quello che voglio descrivere è un po' il mio viaggio tra le strategie che abbiamo adottato, e parlando di viaggi&hellip;</p>
+<p><img src="https://marcodenisi.dev/img/articles/branching/dante.png" alt="Dante Alighieri"></p>
 <p>Ho individuato tre macro fasi che nella mia testa si sono associate automaticamente alle tre cantiche della Divina Commedia. Finito questo <a href="https://it.wikipedia.org/wiki/Inferno_-_Canto_primo">Canto Introduttivo</a>, passiamo alla mia prima fase.</p>
-
-<h2 id="fase-1-purgatorio">Fase 1 - Purgatorio</h2>
-
+<h2 id="fase-1---purgatorio">Fase 1 - Purgatorio</h2>
 <p>Nella prima fase del progetto, diversi team lavoravano su una sola <em>codebase</em>. Non avevamo un&rsquo;ambiente di produzione, ma solo un ambiente di sviluppo per testare le integrazioni tra <em>backend</em> e <em>frontend</em>.</p>
-
 <p>Il <em>business</em> dava i requisiti sulle nuove funzionalità che erano rilasciate in questo ambiente di sviluppo. Da qui, la strategia di branching:</p>
-
 <ul>
 <li>un solo branch principale per lo sviluppo (<em>aka</em> develop) - <em>master</em> era presente ma non usato attivamente</li>
 <li>nuove feature sviluppate su branch staccati da develop</li>
 <li>a fine sviluppo il merge avveniva su develop</li>
 </ul>
-
-<p><img src="https://marcodenisi.dev/img/articles/branching/fase1.png" alt="Fase 1" /></p>
-
+<p><img src="https://marcodenisi.dev/img/articles/branching/fase1.png" alt="Fase 1"></p>
 <p>Non molto originale, ma funzionale. Difatti, l&rsquo;ho associata al purgatorio: da un lato la mancanza di regole stringenti rendeva il tutto molto semplice, dall&rsquo;altra ogni team/sviluppatore andava per conto suo.</p>
-
-<h2 id="fase-2-paradiso">Fase 2 - Paradiso</h2>
-
+<h2 id="fase-2---paradiso">Fase 2 - Paradiso</h2>
 <p>Nella fase intermedia del progetto ci si è accorti di alcune limitazioni del modello precedente. La necessità di avere una visione univoca sul prodotto ha portato alla creazione di un unico team che lavorava sulla codebase.</p>
-
 <p>In questa fase è avvenuto il massimo sforzo: business dava nuovi requisiti senza soluzione di continuità. Inoltre, sono stati messi in piedi più ambienti: test, stage e produzione.</p>
-
 <p>Per supportare al meglio questo cambiamento abbiamo adattato anche la branching strategy, portandola molto vicino a <a href="https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow">git flow</a>:</p>
-
 <ul>
 <li><em>develop</em> è il branch di sviluppo</li>
 <li><em>master</em> contiene ciò che c&rsquo;è in produzione</li>
@@ -285,35 +256,22 @@ Infatti, i concetti critici di Git sono pochi:</p>
 <li><em>release branch</em> che veniva promosso nei vari ambienti, fino a produzione</li>
 <li>introduzione dei <em>tag</em></li>
 </ul>
-
-<p><img src="https://marcodenisi.dev/img/articles/branching/fase2.png" alt="Fase 2" /></p>
-
+<p><img src="https://marcodenisi.dev/img/articles/branching/fase2.png" alt="Fase 2"></p>
 <p>Paradiso? Forse no, ma ci siamo molto vicini. Regole ben definite portano a concentrarsi principalmente sullo sviluppo, soprattutto se supportati da CI e CD ben studiate (come nel nostro caso).</p>
-
-<h2 id="fase-3-inferno">Fase 3 - Inferno</h2>
-
+<h2 id="fase-3---inferno">Fase 3 - Inferno</h2>
 <p>Nella fase finale del progetto la composizione del team non è cambiata. Quello che è cambiato è il modo con cui il business da i requisiti.</p>
-
 <p>Il problema principale che abbiamo affrontato è che requisiti diversi dovevano andare in produzione con tempistiche diverse nonostante dovessero essere sviluppati contemporaneamente. Alcuni non erano nemmeno compatibili tra loro (esempio: funzionalità che devono essere attive solo per un lasso di tempo).</p>
-
 <p>Il modello di branching è cambiato nuovamente ed è molto vicino al modello <em>Release Train</em> che Martin Fowler ha spiegato dettagliatamente <a href="https://martinfowler.com/articles/branching-patterns.html#release-train">qui</a>. In due parole:</p>
-
 <ul>
 <li><em>release/DD_MM_YYYY</em> è il branch nel quale vengono sviluppate le feature che andranno in produzione nella data specificata. Ce ne possono essere più di uno contemporaneamente</li>
 <li><em>develop</em> è il branch nel quale vengono messe tutte le funzionalità future, non associate ad una release specifica</li>
 </ul>
-
-<p><img src="https://marcodenisi.dev/img/articles/branching/fase3.png" alt="Fase 3" /></p>
-
+<p><img src="https://marcodenisi.dev/img/articles/branching/fase3.png" alt="Fase 3"></p>
 <p>Di per se la strategia è chiara, ma le differenze da quella precedente sono molte. L&rsquo;inferno sta proprio qui: cambiare così tanto il modo di lavorare porta a errori e incomprensioni all&rsquo;interno del team. Ci vuole tempo perché tutti si abituino a questo nuovo flusso.
 Anche la CI/CD è cambiata, per non parlare dei vari ambienti.</p>
-
-<h1 id="conclusioni-ritorno-al-paradiso">Conclusioni - ritorno al Paradiso?</h1>
-
+<h1 id="conclusioni---ritorno-al-paradiso">Conclusioni - ritorno al Paradiso?</h1>
 <p>Questa è la conclusione del mio viaggio. Probabilmente ci sarà una fase successiva nella quale la codebase verrà divisa in microservizi ed il team verrà a sua volta diviso per formare i cosiddetti <em>feature team</em>. Questo semplificherà enormemente i flussi e risolverà molti dei problemi che abbiamo incontrato. Ma questa è un&rsquo;altra storia&hellip;</p>
-
-<p><img src="https://marcodenisi.dev/img/articles/branching/storia_infinita.png" alt="La Storia Infinita" /></p>
-
+<p><img src="https://marcodenisi.dev/img/articles/branching/storia_infinita.png" alt="La Storia Infinita"></p>
 <p>Quello che ho imparato è che le scelte del business impattano in maniera decisiva anche le questioni che potrebbero sembrare prettamente tecniche. Quindi, cambiamenti di questo tipo devono essere valutati attentamente e non devono avvenire troppo spesso. Non solo per una questione di costi ma anche per evitare dei gran mal di testa al team di sviluppo.</p>
 
                 <br>

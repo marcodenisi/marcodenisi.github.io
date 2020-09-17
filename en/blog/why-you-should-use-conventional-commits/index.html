@@ -19,8 +19,8 @@ Has a commit introduced a breaking change? Any fix? Good luck finding the answer
 From this another problem arises. Let&rsquo;s say you have to decide the software version number." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://marcodenisi.dev/en/blog/why-you-should-use-conventional-commits/" />
-<meta property="article:published_time" content="2020-01-10T10:30:41&#43;01:00"/>
-<meta property="article:modified_time" content="2020-01-10T10:30:41&#43;01:00"/>
+<meta property="article:published_time" content="2020-01-10T10:30:41+01:00" />
+<meta property="article:modified_time" content="2020-01-10T10:30:41+01:00" />
 
 
 <script type="application/ld+json">
@@ -29,14 +29,12 @@ From this another problem arises. Let&rsquo;s say you have to decide the softwar
         "@type" : "BlogPosting",
         "mainEntityOfPage": {
              "@type": "WebPage",
-             "@id": "https://marcodenisi.dev"
+             "@id": "https:\/\/marcodenisi.dev"
         },
         "articleSection" : "blog",
         "name" : "Why you should use Conventional Commits",
         "headline" : "Why you should use Conventional Commits",
-        "description" : "Nowadays, versioning systems are used everywhere to simplify collaboration between developers working on the same codebase. That&rsquo;s great, if it weren&rsquo;t that, in the long run, commits history starts looking like this:
-Has a commit introduced a breaking change? Any fix? Good luck finding the answer just looking at that: you&rsquo;d better start walking in your open space asking who did what.
-From this another problem arises. Let&rsquo;s say you have to decide the software version number.",
+        "description" : "Nowadays, versioning systems are used everywhere to simplify collaboration between developers working on the same codebase. That\u0026rsquo;s great, if it weren\u0026rsquo;t that, in the long run, commits history starts looking like this:\nHas a commit introduced a breaking change? Any fix? Good luck finding the answer just looking at that: you\u0026rsquo;d better start walking in your open space asking who did what.\nFrom this another problem arises. Let\u0026rsquo;s say you have to decide the software version number.",
         "inLanguage" : "en",
         "author" : "Marco Denisi",
         "creator" : "Marco Denisi",
@@ -44,9 +42,9 @@ From this another problem arises. Let&rsquo;s say you have to decide the softwar
         "accountablePerson" : "Marco Denisi",
         "copyrightHolder" : "Marco Denisi",
         "copyrightYear" : "2020",
-        "datePublished": "2020-01-10 10:30:41 &#43;0100 &#43;0100",
-        "dateModified" : "2020-01-10 10:30:41 &#43;0100 &#43;0100",
-        "url" : "https://marcodenisi.dev/en/blog/why-you-should-use-conventional-commits/",
+        "datePublished": "2020-01-10 10:30:41 \u002b0100 \u002b0100",
+        "dateModified" : "2020-01-10 10:30:41 \u002b0100 \u002b0100",
+        "url" : "https:\/\/marcodenisi.dev\/en\/blog\/why-you-should-use-conventional-commits\/",
         "wordCount" : "380",
         "keywords" : [ "git","semantic-versioning","changelog","automation","cd","Blog" ]
     }
@@ -75,11 +73,11 @@ From this another problem arises. Let&rsquo;s say you have to decide the softwar
 
 
     
-    <link rel="stylesheet" href="https://marcodenisi.dev/css/reset.css?t=2020-08-07%2016%3a42%3a15.507539108%20%2b0000%20UTC%20m%3d%2b0.131473312">
-    <link rel="stylesheet" href="https://marcodenisi.dev/css/pygments.css?t=2020-08-07%2016%3a42%3a15.507539108%20%2b0000%20UTC%20m%3d%2b0.131473312">
-    <link rel="stylesheet" href="https://marcodenisi.dev/css/main.css?t=2020-08-07%2016%3a42%3a15.507539108%20%2b0000%20UTC%20m%3d%2b0.131473312">
+    <link rel="stylesheet" href="https://marcodenisi.dev/css/reset.css?t=2020-09-17%2021%3a13%3a40.758441048%20%2b0000%20UTC%20m%3d%2b0.115638982">
+    <link rel="stylesheet" href="https://marcodenisi.dev/css/pygments.css?t=2020-09-17%2021%3a13%3a40.758441048%20%2b0000%20UTC%20m%3d%2b0.115638982">
+    <link rel="stylesheet" href="https://marcodenisi.dev/css/main.css?t=2020-09-17%2021%3a13%3a40.758441048%20%2b0000%20UTC%20m%3d%2b0.115638982">
     
-        <link rel="stylesheet" href="https://marcodenisi.dev/css/override.css?t=2020-08-07%2016%3a42%3a15.507539108%20%2b0000%20UTC%20m%3d%2b0.131473312">
+        <link rel="stylesheet" href="https://marcodenisi.dev/css/override.css?t=2020-09-17%2021%3a13%3a40.758441048%20%2b0000%20UTC%20m%3d%2b0.115638982">
     
 
 
@@ -212,70 +210,42 @@ From this another problem arises. Let&rsquo;s say you have to decide the softwar
                 </div>
             </div>
             <div class="markdown">
-                
-
-<p>Nowadays, versioning systems are used everywhere to simplify collaboration between developers working on the same codebase. That&rsquo;s great, if it weren&rsquo;t that, in the long run, commits history starts looking like this:</p>
-
-<p><img src="https://marcodenisi.dev/img/articles/git_commit.png" alt="Git Commit - xkcd" /></p>
-
+                <p>Nowadays, versioning systems are used everywhere to simplify collaboration between developers working on the same codebase. That&rsquo;s great, if it weren&rsquo;t that, in the long run, commits history starts looking like this:</p>
+<p><img src="https://marcodenisi.dev/img/articles/git_commit.png" alt="Git Commit - xkcd"></p>
 <p>Has a commit introduced a breaking change? Any fix? Good luck finding the answer just looking at that: you&rsquo;d better start walking in your open space asking who did what.</p>
-
 <p>From this another problem arises. Let&rsquo;s say you have to decide the software version number. Usually, it is composed by three numbers <code>X.Y.Z</code>. How do you decide these values? And how do you create the changelog?</p>
-
 <p>Let&rsquo;s start by talking about <strong>Conventional Commits</strong>.</p>
-
-<h1 id="what-s-conventional-commits">What&rsquo;s Conventional Commits</h1>
-
+<h1 id="whats-conventional-commits">What&rsquo;s Conventional Commits</h1>
 <p>Conventional Commits is nothing but a <em>convention</em> on how commit messages should be written. As stated by the <a href="https://www.conventionalcommits.org/en/v1.0.0/">official documentation</a>, commits should be in the form:</p>
-
 <pre><code>&lt;type&gt;[optional scope]: &lt;description&gt;
 [optional body]
 [optional footer(s)]
-</code></pre>
-
-<p>And here a practical example, without optional fields:</p>
-
+</code></pre><p>And here a practical example, without optional fields:</p>
 <pre><code>feat: add new API to retrieve users
-</code></pre>
-
-<p>Main types could be:</p>
-
+</code></pre><p>Main types could be:</p>
 <ul>
 <li><code>feat</code>, describing the introduction of a new feature</li>
 <li><code>fix</code>, describing a fix
 There are a bunch of them, you can find more information in the documentation.</li>
 </ul>
-
-<h1 id="why-it-s-useful">Why it&rsquo;s useful</h1>
-
+<h1 id="why-its-useful">Why it&rsquo;s useful</h1>
 <p>Sometime a <em>git log</em> is worth a thousand words:</p>
-
-<pre><code class="language-bash">fix(lambda-article): change publish date
-fix(lambda-article): make article not draft anymore
-feat(lambda-article): add new article on lambda functions
-feat(cd): introduce github action to automatically build website
-</code></pre>
-
-<p>Just reading commit descriptions you can exactly understand what has been done. In this example, two features and two fixes were introduced.</p>
-
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">fix<span class="o">(</span>lambda-article<span class="o">)</span>: change publish date
+fix<span class="o">(</span>lambda-article<span class="o">)</span>: make article not draft anymore
+feat<span class="o">(</span>lambda-article<span class="o">)</span>: add new article on lambda functions
+feat<span class="o">(</span><span class="nb">cd</span><span class="o">)</span>: introduce github action to automatically build website
+</code></pre></div><p>Just reading commit descriptions you can exactly understand what has been done. In this example, two features and two fixes were introduced.</p>
 <p>You may say that you can do the same without using conventional commits. You&rsquo;re right, so let&rsquo;s talk about <strong>Semantic Versioning</strong>.</p>
-
 <h1 id="semantic-versioning">Semantic Versioning</h1>
-
 <p><a href="https://semver.org/">Semantic Versioning</a> it&rsquo;s a set of rules (or a <em>framework</em>) defining how to decide the version number.</p>
-
 <p>Given a version <code>X.Y.Z</code>:</p>
-
 <ul>
 <li>X is the MAJOR: when introducing <em>breaking changes</em></li>
 <li>Y is the MINOR: for new <em>features</em></li>
 <li>Z is the PATCH: for new <em>bug fixes</em></li>
 </ul>
-
 <p>The link with Conventional Commits is obvious: from commits history you can exactly define the version number to assign.</p>
-
 <p>Lot of tools can also autogenerate changelogs starting from commits history: here at Sky we use an internal one (<em>what-bump</em>, written in Rust), but there are a lot of open-source alternatives.</p>
-
 <p>Just add these kind of tools in your release pipeline <em>et voilà</em>, version number set and changelog generated.</p>
 
                 <br>

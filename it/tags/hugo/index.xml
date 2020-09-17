@@ -1,23 +1,19 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Hugo on Marco Denisi</title>
+    <title>hugo on Marco Denisi</title>
     <link>https://marcodenisi.dev/it/tags/hugo/</link>
-    <description>Recent content in Hugo on Marco Denisi</description>
+    <description>Recent content in hugo on Marco Denisi</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>it</language>
-    <lastBuildDate>Tue, 05 Nov 2019 10:26:59 +0100</lastBuildDate>
-    
-	<atom:link href="https://marcodenisi.dev/it/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Tue, 05 Nov 2019 10:26:59 +0100</lastBuildDate><atom:link href="https://marcodenisi.dev/it/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Github Actions: un esempio concreto con Hugo e Latex</title>
       <link>https://marcodenisi.dev/it/blog/github-actions-un-esempio-concreto-con-hugo-e-latex/</link>
       <pubDate>Tue, 05 Nov 2019 10:26:59 +0100</pubDate>
       
       <guid>https://marcodenisi.dev/it/blog/github-actions-un-esempio-concreto-con-hugo-e-latex/</guid>
-      <description>È un po&amp;rsquo; di tempo che ho deciso di scrivere il mio curriculum in Latex e di utilizzare Github per il versionamento (qui il repository). Mi sono detto che sarebbe stato molto bello se, ad ogni aggiornamento (aka ad ogni nuovo commit sul repository), mi fossi ritrovato il pdf risultante dalla compilazione come nuova release del mio cv.
+      <description>È un po&#39; di tempo che ho deciso di scrivere il mio curriculum in Latex e di utilizzare Github per il versionamento (qui il repository). Mi sono detto che sarebbe stato molto bello se, ad ogni aggiornamento (aka ad ogni nuovo commit sul repository), mi fossi ritrovato il pdf risultante dalla compilazione come nuova release del mio cv.
 Lo stesso desiderio l&amp;rsquo;ho avuto quando ho cominciato a pensare e costruire questo blog: non sarebbe fantastico se ad ogni nuovo contenuto la pubblicazione avvenisse in maniera automatica?</description>
     </item>
     

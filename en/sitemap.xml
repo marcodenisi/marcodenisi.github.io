@@ -1,6 +1,111 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://marcodenisi.dev/en/tags/best-practises/</loc>
+    <lastmod>2020-09-17T12:39:10+02:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="it"
+                href="https://marcodenisi.dev/it/tags/best-practises/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://marcodenisi.dev/en/tags/best-practises/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://marcodenisi.dev/en/categories/</loc>
+    <lastmod>2020-09-17T12:39:10+02:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="it"
+                href="https://marcodenisi.dev/it/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://marcodenisi.dev/en/categories/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://marcodenisi.dev/en/blog/good-interviewer/</loc>
+    <lastmod>2020-09-17T12:39:10+02:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="it"
+                href="https://marcodenisi.dev/it/blog/come-essere-un-buon-intervistatore/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://marcodenisi.dev/en/blog/good-interviewer/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://marcodenisi.dev/en/categories/interviews/</loc>
+    <lastmod>2020-09-17T12:39:10+02:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="it"
+                href="https://marcodenisi.dev/it/categories/interviews/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://marcodenisi.dev/en/categories/interviews/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://marcodenisi.dev/en/tags/interviews/</loc>
+    <lastmod>2020-09-17T12:39:10+02:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="it"
+                href="https://marcodenisi.dev/it/tags/interviews/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://marcodenisi.dev/en/tags/interviews/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://marcodenisi.dev/en/</loc>
+    <lastmod>2020-09-17T12:39:10+02:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="it"
+                href="https://marcodenisi.dev/it/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://marcodenisi.dev/en/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://marcodenisi.dev/en/tags/</loc>
+    <lastmod>2020-09-17T12:39:10+02:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="it"
+                href="https://marcodenisi.dev/it/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://marcodenisi.dev/en/tags/"
+                />
+  </url>
   
   <url>
     <loc>https://marcodenisi.dev/en/blog/business-driven-branching/</loc>
@@ -14,6 +119,66 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://marcodenisi.dev/en/blog/business-driven-branching/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://marcodenisi.dev/en/tags/circuit-breaker/</loc>
+    <lastmod>2020-03-15T12:21:26+01:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="it"
+                href="https://marcodenisi.dev/it/tags/circuit-breaker/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://marcodenisi.dev/en/tags/circuit-breaker/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://marcodenisi.dev/en/categories/development/</loc>
+    <lastmod>2020-03-15T12:21:26+01:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="it"
+                href="https://marcodenisi.dev/it/categories/development/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://marcodenisi.dev/en/categories/development/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://marcodenisi.dev/en/tags/java/</loc>
+    <lastmod>2020-03-15T12:21:26+01:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="it"
+                href="https://marcodenisi.dev/it/tags/java/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://marcodenisi.dev/en/tags/java/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://marcodenisi.dev/en/tags/patterns/</loc>
+    <lastmod>2020-03-15T12:21:26+01:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="it"
+                href="https://marcodenisi.dev/it/tags/patterns/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://marcodenisi.dev/en/tags/patterns/"
                 />
   </url>
   
@@ -33,6 +198,96 @@
   </url>
   
   <url>
+    <loc>https://marcodenisi.dev/en/tags/resilience4j/</loc>
+    <lastmod>2020-03-15T12:21:26+01:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="it"
+                href="https://marcodenisi.dev/it/tags/resilience4j/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://marcodenisi.dev/en/tags/resilience4j/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://marcodenisi.dev/en/tags/automation/</loc>
+    <lastmod>2020-01-10T10:30:41+01:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="it"
+                href="https://marcodenisi.dev/it/tags/automation/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://marcodenisi.dev/en/tags/automation/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://marcodenisi.dev/en/tags/cd/</loc>
+    <lastmod>2020-01-10T10:30:41+01:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="it"
+                href="https://marcodenisi.dev/it/tags/cd/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://marcodenisi.dev/en/tags/cd/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://marcodenisi.dev/en/tags/changelog/</loc>
+    <lastmod>2020-01-10T10:30:41+01:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="it"
+                href="https://marcodenisi.dev/it/tags/changelog/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://marcodenisi.dev/en/tags/changelog/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://marcodenisi.dev/en/tags/git/</loc>
+    <lastmod>2020-01-10T10:30:41+01:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="it"
+                href="https://marcodenisi.dev/it/tags/git/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://marcodenisi.dev/en/tags/git/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://marcodenisi.dev/en/tags/semantic-versioning/</loc>
+    <lastmod>2020-01-10T10:30:41+01:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="it"
+                href="https://marcodenisi.dev/it/tags/semantic-versioning/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://marcodenisi.dev/en/tags/semantic-versioning/"
+                />
+  </url>
+  
+  <url>
     <loc>https://marcodenisi.dev/en/blog/why-you-should-use-conventional-commits/</loc>
     <lastmod>2020-01-10T10:30:41+01:00</lastmod>
     <xhtml:link
@@ -44,6 +299,21 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://marcodenisi.dev/en/blog/why-you-should-use-conventional-commits/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://marcodenisi.dev/en/tags/github/</loc>
+    <lastmod>2019-11-05T10:26:59+01:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="it"
+                href="https://marcodenisi.dev/it/tags/github/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://marcodenisi.dev/en/tags/github/"
                 />
   </url>
   
@@ -63,6 +333,36 @@
   </url>
   
   <url>
+    <loc>https://marcodenisi.dev/en/tags/github-actions/</loc>
+    <lastmod>2019-11-05T10:26:59+01:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="it"
+                href="https://marcodenisi.dev/it/tags/github-actions/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://marcodenisi.dev/en/tags/github-actions/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://marcodenisi.dev/en/tags/hugo/</loc>
+    <lastmod>2019-11-05T10:26:59+01:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="it"
+                href="https://marcodenisi.dev/it/tags/hugo/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://marcodenisi.dev/en/tags/hugo/"
+                />
+  </url>
+  
+  <url>
     <loc>https://marcodenisi.dev/en/about/</loc>
     <lastmod>2019-09-26T00:07:46+02:00</lastmod>
     <xhtml:link
@@ -74,6 +374,21 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://marcodenisi.dev/en/about/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://marcodenisi.dev/en/tags/aws/</loc>
+    <lastmod>2019-09-26T00:07:46+02:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="it"
+                href="https://marcodenisi.dev/it/tags/aws/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://marcodenisi.dev/en/tags/aws/"
                 />
   </url>
   
@@ -93,215 +408,8 @@
   </url>
   
   <url>
-    <loc>https://marcodenisi.dev/en/blog/lambda-step-by-step/</loc>
-    <lastmod>2019-09-26T00:07:46+02:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="it"
-                href="https://marcodenisi.dev/it/blog/lambda-step-by-step/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://marcodenisi.dev/en/blog/lambda-step-by-step/"
-                />
-  </url>
-  
-  <url>
-    <loc>https://marcodenisi.dev/en/tags/automation/</loc>
-    <lastmod>2020-01-10T10:30:41+01:00</lastmod>
-    <priority>0</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="it"
-                href="https://marcodenisi.dev/it/tags/automation/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://marcodenisi.dev/en/tags/automation/"
-                />
-  </url>
-  
-  <url>
-    <loc>https://marcodenisi.dev/en/tags/aws/</loc>
-    <lastmod>2019-09-26T00:07:46+02:00</lastmod>
-    <priority>0</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="it"
-                href="https://marcodenisi.dev/it/tags/aws/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://marcodenisi.dev/en/tags/aws/"
-                />
-  </url>
-  
-  <url>
-    <loc>https://marcodenisi.dev/en/categories/</loc>
-    <priority>0</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="it"
-                href="https://marcodenisi.dev/it/categories/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://marcodenisi.dev/en/categories/"
-                />
-  </url>
-  
-  <url>
-    <loc>https://marcodenisi.dev/en/tags/cd/</loc>
-    <lastmod>2020-01-10T10:30:41+01:00</lastmod>
-    <priority>0</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="it"
-                href="https://marcodenisi.dev/it/tags/cd/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://marcodenisi.dev/en/tags/cd/"
-                />
-  </url>
-  
-  <url>
-    <loc>https://marcodenisi.dev/en/tags/changelog/</loc>
-    <lastmod>2020-01-10T10:30:41+01:00</lastmod>
-    <priority>0</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="it"
-                href="https://marcodenisi.dev/it/tags/changelog/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://marcodenisi.dev/en/tags/changelog/"
-                />
-  </url>
-  
-  <url>
-    <loc>https://marcodenisi.dev/en/tags/circuit-breaker/</loc>
-    <lastmod>2020-03-15T12:21:26+01:00</lastmod>
-    <priority>0</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="it"
-                href="https://marcodenisi.dev/it/tags/circuit-breaker/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://marcodenisi.dev/en/tags/circuit-breaker/"
-                />
-  </url>
-  
-  <url>
-    <loc>https://marcodenisi.dev/en/categories/development/</loc>
-    <lastmod>2020-03-15T12:21:26+01:00</lastmod>
-    <priority>0</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="it"
-                href="https://marcodenisi.dev/it/categories/development/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://marcodenisi.dev/en/categories/development/"
-                />
-  </url>
-  
-  <url>
-    <loc>https://marcodenisi.dev/en/tags/git/</loc>
-    <lastmod>2020-01-10T10:30:41+01:00</lastmod>
-    <priority>0</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="it"
-                href="https://marcodenisi.dev/it/tags/git/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://marcodenisi.dev/en/tags/git/"
-                />
-  </url>
-  
-  <url>
-    <loc>https://marcodenisi.dev/en/tags/github/</loc>
-    <lastmod>2019-11-05T10:26:59+01:00</lastmod>
-    <priority>0</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="it"
-                href="https://marcodenisi.dev/it/tags/github/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://marcodenisi.dev/en/tags/github/"
-                />
-  </url>
-  
-  <url>
-    <loc>https://marcodenisi.dev/en/tags/github-actions/</loc>
-    <lastmod>2019-11-05T10:26:59+01:00</lastmod>
-    <priority>0</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="it"
-                href="https://marcodenisi.dev/it/tags/github-actions/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://marcodenisi.dev/en/tags/github-actions/"
-                />
-  </url>
-  
-  <url>
-    <loc>https://marcodenisi.dev/en/tags/hugo/</loc>
-    <lastmod>2019-11-05T10:26:59+01:00</lastmod>
-    <priority>0</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="it"
-                href="https://marcodenisi.dev/it/tags/hugo/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://marcodenisi.dev/en/tags/hugo/"
-                />
-  </url>
-  
-  <url>
-    <loc>https://marcodenisi.dev/en/tags/java/</loc>
-    <lastmod>2020-03-15T12:21:26+01:00</lastmod>
-    <priority>0</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="it"
-                href="https://marcodenisi.dev/it/tags/java/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://marcodenisi.dev/en/tags/java/"
-                />
-  </url>
-  
-  <url>
     <loc>https://marcodenisi.dev/en/tags/java8/</loc>
     <lastmod>2019-09-26T00:07:46+02:00</lastmod>
-    <priority>0</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="it"
@@ -317,7 +425,6 @@
   <url>
     <loc>https://marcodenisi.dev/en/tags/lambda/</loc>
     <lastmod>2019-09-26T00:07:46+02:00</lastmod>
-    <priority>0</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="it"
@@ -331,57 +438,23 @@
   </url>
   
   <url>
-    <loc>https://marcodenisi.dev/en/</loc>
-    <lastmod>2020-05-19T16:29:13+02:00</lastmod>
-    <priority>0</priority>
+    <loc>https://marcodenisi.dev/en/blog/lambda-step-by-step/</loc>
+    <lastmod>2019-09-26T00:07:46+02:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="it"
-                href="https://marcodenisi.dev/it/"
+                href="https://marcodenisi.dev/it/blog/lambda-step-by-step/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://marcodenisi.dev/en/"
-                />
-  </url>
-  
-  <url>
-    <loc>https://marcodenisi.dev/en/tags/patterns/</loc>
-    <lastmod>2020-03-15T12:21:26+01:00</lastmod>
-    <priority>0</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="it"
-                href="https://marcodenisi.dev/it/tags/patterns/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://marcodenisi.dev/en/tags/patterns/"
-                />
-  </url>
-  
-  <url>
-    <loc>https://marcodenisi.dev/en/tags/resilience4j/</loc>
-    <lastmod>2020-03-15T12:21:26+01:00</lastmod>
-    <priority>0</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="it"
-                href="https://marcodenisi.dev/it/tags/resilience4j/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://marcodenisi.dev/en/tags/resilience4j/"
+                href="https://marcodenisi.dev/en/blog/lambda-step-by-step/"
                 />
   </url>
   
   <url>
     <loc>https://marcodenisi.dev/en/tags/sam/</loc>
     <lastmod>2019-09-26T00:07:46+02:00</lastmod>
-    <priority>0</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="it"
@@ -391,38 +464,6 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://marcodenisi.dev/en/tags/sam/"
-                />
-  </url>
-  
-  <url>
-    <loc>https://marcodenisi.dev/en/tags/semantic-versioning/</loc>
-    <lastmod>2020-01-10T10:30:41+01:00</lastmod>
-    <priority>0</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="it"
-                href="https://marcodenisi.dev/it/tags/semantic-versioning/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://marcodenisi.dev/en/tags/semantic-versioning/"
-                />
-  </url>
-  
-  <url>
-    <loc>https://marcodenisi.dev/en/tags/</loc>
-    <lastmod>2020-01-10T10:30:41+01:00</lastmod>
-    <priority>0</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="it"
-                href="https://marcodenisi.dev/it/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://marcodenisi.dev/en/tags/"
                 />
   </url>
   

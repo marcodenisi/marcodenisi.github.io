@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Blog on Marco Denisi</title>
@@ -6,10 +6,18 @@
     <description>Recent content in Blog on Marco Denisi</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>it</language>
-    <lastBuildDate>Thu, 26 Sep 2019 00:07:46 +0200</lastBuildDate>
-    
-	<atom:link href="https://marcodenisi.dev/it/blog/index.xml" rel="self" type="application/rss+xml" />
-    
+    <lastBuildDate>Thu, 26 Sep 2019 00:07:46 +0200</lastBuildDate><atom:link href="https://marcodenisi.dev/it/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Come essere un buon intervistatore</title>
+      <link>https://marcodenisi.dev/it/blog/come-essere-un-buon-intervistatore/</link>
+      <pubDate>Thu, 17 Sep 2020 12:39:10 +0200</pubDate>
+      
+      <guid>https://marcodenisi.dev/it/blog/come-essere-un-buon-intervistatore/</guid>
+      <description>Durante gli ultimi due anni mi sono ritrovato molto spesso a dover colloquiare qualcuno. Memore di alcune brutte esperienze passate, mi sono ripromesso di fare del mio meglio: volevo che le persone intervistate si sentissero a proprio agio parlando con me.
+Cosa consiglierei al me stesso di due anni fa?
+1. Non mettere in difficoltà il candidato   Prima cosa: sii gentile.
+  No a domande cervellotiche, ma si a Valsoia a domande sfidanti.</description>
+    </item>
     
     <item>
       <title>Business Driven Branching</title>
@@ -48,7 +56,7 @@ Qualche commit ha introdotto una breaking change? Ci sono state fix? In bocca al
       <pubDate>Tue, 05 Nov 2019 10:26:59 +0100</pubDate>
       
       <guid>https://marcodenisi.dev/it/blog/github-actions-un-esempio-concreto-con-hugo-e-latex/</guid>
-      <description>È un po&amp;rsquo; di tempo che ho deciso di scrivere il mio curriculum in Latex e di utilizzare Github per il versionamento (qui il repository). Mi sono detto che sarebbe stato molto bello se, ad ogni aggiornamento (aka ad ogni nuovo commit sul repository), mi fossi ritrovato il pdf risultante dalla compilazione come nuova release del mio cv.
+      <description>È un po&#39; di tempo che ho deciso di scrivere il mio curriculum in Latex e di utilizzare Github per il versionamento (qui il repository). Mi sono detto che sarebbe stato molto bello se, ad ogni aggiornamento (aka ad ogni nuovo commit sul repository), mi fossi ritrovato il pdf risultante dalla compilazione come nuova release del mio cv.
 Lo stesso desiderio l&amp;rsquo;ho avuto quando ho cominciato a pensare e costruire questo blog: non sarebbe fantastico se ad ogni nuovo contenuto la pubblicazione avvenisse in maniera automatica?</description>
     </item>
     

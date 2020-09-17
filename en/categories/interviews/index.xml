@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Interviews on Marco Denisi</title>
+    <link>https://marcodenisi.dev/en/categories/interviews/</link>
+    <description>Recent content in Interviews on Marco Denisi</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>it</language>
+    <lastBuildDate>Thu, 17 Sep 2020 12:39:10 +0200</lastBuildDate><atom:link href="https://marcodenisi.dev/en/categories/interviews/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Good Interviewer</title>
+      <link>https://marcodenisi.dev/en/blog/good-interviewer/</link>
+      <pubDate>Thu, 17 Sep 2020 12:39:10 +0200</pubDate>
+      
+      <guid>https://marcodenisi.dev/en/blog/good-interviewer/</guid>
+      <description>During the last two years I found myself having to interview a lot of people. Mindful of some bad experiences in the past, I promised myself to do my best: I wanted the people interviewed to feel comfortable talking to me.
+What would I recommend to myself from two years ago?
+1. Do not put the candidate in trouble   First thing: be kind.
+  No to brain-teasing questions, but yes to challenging questions.</description>
+    </item>
+    
+  </channel>
+</rss>

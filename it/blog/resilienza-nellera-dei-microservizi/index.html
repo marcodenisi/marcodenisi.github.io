@@ -17,8 +17,8 @@
  la chiamata HTTP ci mette una vita! questa roba si spacca una volta si e l&rsquo;altra pure in produzione andrà giù tutto!  Tutte queste (giuste) lamentele sono tipiche di quando dobbiamo fare chiamate tra macchine remote. Soprattutto quando si ha a che fare con sistemi unresponsive, c&rsquo;è il rischio che finiscano le risorse portando a fallimenti a cascata." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://marcodenisi.dev/it/blog/resilienza-nellera-dei-microservizi/" />
-<meta property="article:published_time" content="2020-03-15T12:21:26&#43;01:00"/>
-<meta property="article:modified_time" content="2020-03-15T12:21:26&#43;01:00"/>
+<meta property="article:published_time" content="2020-03-15T12:21:26+01:00" />
+<meta property="article:modified_time" content="2020-03-15T12:21:26+01:00" />
 
 
 <script type="application/ld+json">
@@ -27,13 +27,12 @@
         "@type" : "BlogPosting",
         "mainEntityOfPage": {
              "@type": "WebPage",
-             "@id": "https://marcodenisi.dev"
+             "@id": "https:\/\/marcodenisi.dev"
         },
         "articleSection" : "blog",
-        "name" : "Resilienza nell&#39;era dei microservizi",
-        "headline" : "Resilienza nell&#39;era dei microservizi",
-        "description" : "Quante volte è capitato di dover integrare un servizio esterno all&rsquo;interno dei nostri progetti? Sono all&rsquo;ordine del giorno frasi come:
- la chiamata HTTP ci mette una vita! questa roba si spacca una volta si e l&rsquo;altra pure in produzione andrà giù tutto!  Tutte queste (giuste) lamentele sono tipiche di quando dobbiamo fare chiamate tra macchine remote. Soprattutto quando si ha a che fare con sistemi unresponsive, c&rsquo;è il rischio che finiscano le risorse portando a fallimenti a cascata.",
+        "name" : "Resilienza nell\u0027era dei microservizi",
+        "headline" : "Resilienza nell\u0027era dei microservizi",
+        "description" : "Quante volte è capitato di dover integrare un servizio esterno all\u0026rsquo;interno dei nostri progetti? Sono all\u0026rsquo;ordine del giorno frasi come:\n la chiamata HTTP ci mette una vita! questa roba si spacca una volta si e l\u0026rsquo;altra pure in produzione andrà giù tutto!  Tutte queste (giuste) lamentele sono tipiche di quando dobbiamo fare chiamate tra macchine remote. Soprattutto quando si ha a che fare con sistemi unresponsive, c\u0026rsquo;è il rischio che finiscano le risorse portando a fallimenti a cascata.",
         "inLanguage" : "it",
         "author" : "Marco Denisi",
         "creator" : "Marco Denisi",
@@ -41,10 +40,10 @@
         "accountablePerson" : "Marco Denisi",
         "copyrightHolder" : "Marco Denisi",
         "copyrightYear" : "2020",
-        "datePublished": "2020-03-15 12:21:26 &#43;0100 &#43;0100",
-        "dateModified" : "2020-03-15 12:21:26 &#43;0100 &#43;0100",
-        "url" : "https://marcodenisi.dev/it/blog/resilienza-nellera-dei-microservizi/",
-        "wordCount" : "640",
+        "datePublished": "2020-03-15 12:21:26 \u002b0100 \u002b0100",
+        "dateModified" : "2020-03-15 12:21:26 \u002b0100 \u002b0100",
+        "url" : "https:\/\/marcodenisi.dev\/it\/blog\/resilienza-nellera-dei-microservizi\/",
+        "wordCount" : "620",
         "keywords" : [ "resilience4j","java","patterns","circuit-breaker","Blog" ]
     }
     </script>
@@ -72,11 +71,11 @@
 
 
     
-    <link rel="stylesheet" href="https://marcodenisi.dev/css/reset.css?t=2020-08-07%2016%3a42%3a15.452009546%20%2b0000%20UTC%20m%3d%2b0.075943750">
-    <link rel="stylesheet" href="https://marcodenisi.dev/css/pygments.css?t=2020-08-07%2016%3a42%3a15.452009546%20%2b0000%20UTC%20m%3d%2b0.075943750">
-    <link rel="stylesheet" href="https://marcodenisi.dev/css/main.css?t=2020-08-07%2016%3a42%3a15.452009546%20%2b0000%20UTC%20m%3d%2b0.075943750">
+    <link rel="stylesheet" href="https://marcodenisi.dev/css/reset.css?t=2020-09-17%2021%3a13%3a40.707596368%20%2b0000%20UTC%20m%3d%2b0.064794302">
+    <link rel="stylesheet" href="https://marcodenisi.dev/css/pygments.css?t=2020-09-17%2021%3a13%3a40.707596368%20%2b0000%20UTC%20m%3d%2b0.064794302">
+    <link rel="stylesheet" href="https://marcodenisi.dev/css/main.css?t=2020-09-17%2021%3a13%3a40.707596368%20%2b0000%20UTC%20m%3d%2b0.064794302">
     
-        <link rel="stylesheet" href="https://marcodenisi.dev/css/override.css?t=2020-08-07%2016%3a42%3a15.452009546%20%2b0000%20UTC%20m%3d%2b0.075943750">
+        <link rel="stylesheet" href="https://marcodenisi.dev/css/override.css?t=2020-09-17%2021%3a13%3a40.707596368%20%2b0000%20UTC%20m%3d%2b0.064794302">
     
 
 
@@ -204,51 +203,32 @@
                     <div class="date" title='15/03/2020 12:21'>15/03/2020</div>
                     
                     
-		    <div class="reading-time"><div class="middot"></div>4 minuti di lettura</div>
+		    <div class="reading-time"><div class="middot"></div>3 minuti di lettura</div>
                     
                 </div>
             </div>
             <div class="markdown">
-                
-
-<p>Quante volte è capitato di dover integrare un servizio esterno all&rsquo;interno dei nostri progetti? Sono all&rsquo;ordine del giorno frasi come:</p>
-
+                <p>Quante volte è capitato di dover integrare un servizio esterno all&rsquo;interno dei nostri progetti? Sono all&rsquo;ordine del giorno frasi come:</p>
 <ul>
 <li>la chiamata HTTP ci mette una vita!</li>
 <li>questa roba si spacca una volta si e l&rsquo;altra pure</li>
 <li>in produzione andrà giù tutto!</li>
 </ul>
-
 <p>Tutte queste (giuste) lamentele sono tipiche di quando dobbiamo fare chiamate tra macchine remote. Soprattutto quando si ha a che fare con sistemi <em>unresponsive</em>, c&rsquo;è il rischio che finiscano le risorse portando a fallimenti a cascata.</p>
-
 <p>Questo è particolarmente vero nel caso in cui ci troviamo in un&rsquo;architettura a microservizi con chiamate HTTP sincrone.</p>
-
 <h1 id="resilienza">Resilienza</h1>
-
 <p>Questa tipologia di problemi esiste ed esisterà sempre. Tuttavia esistono tutta una serie di pattern che ci permettono di mitigarne le conseguenze e quindi di incrementare la resilienza dei nostri servizi.</p>
-
 <h2 id="circuit-breaker">Circuit Breaker</h2>
-
 <p>L&rsquo;idea di base è molto semplice: <em>wrappare</em> la chiamata remota in un oggetto che monitora i fallimenti. Quando questi raggiungono una certa soglia, il <em>wrapper</em> non esegue più la chiamata remota, aprendo il circuito. In questo modo il carico sul server remoto scende, assicurando anche che il nostro servizio sia <em>responsive</em>.</p>
-
 <h2 id="bulkhead">Bulkhead</h2>
-
 <p>Un bulkhead (in italiano <em>paratia</em>) è una parete che separa diverse sezioni di una nave in modo che incidenti in una sezione (acqua, fuoco, &hellip;) non impattino le sezioni vicine.</p>
-
 <p>Nel mondo dei microservizi, un bulkhead è un pattern che permette di isolare i fallimenti ad un solo componente, in modo da non <em>tirare giù</em> l&rsquo;intera applicazione. Come? Limitando il numero di chiamate concorrenti verso un sistema esterno.</p>
-
 <h2 id="rete-limiter">Rete Limiter</h2>
-
 <p>Anche qui l&rsquo;idea è molto semplice: se si devono fare diverse chiamate verso uno stesso servizio esterno, conviene spalmare queste chiamate all&rsquo;interno di un lasso temporale in modo da dare il tempo al servizio di servire tutte le richieste.</p>
-
 <h1 id="un-esempio-resilience4j">Un esempio: resilience4J</h1>
-
 <p>Il codice completo dell&rsquo;esempio è a disposizione a <a href="https://github.com/md-dev-blog/resilience-microservices-era">questo link</a>.</p>
-
 <p><a href="https://github.com/resilience4j/resilience4j">Resilience4j</a> è una libreria che permette di applicare tutti questi pattern in Java. Prende spunto dalla libreria di Netflix <a href="https://github.com/Netflix/Hystrix">Hystrix</a>, attualmente in <em>maintenance mode</em>.</p>
-
 <p>Poniamo di avere un microservizio che espone una API in <code>GET</code> dietro l&rsquo;endpoint <code>/remote</code> che va a richiamare un servizio esterno (<code>ExternalService</code>):</p>
-
 <div class="mermaid">
     
 sequenceDiagram
@@ -266,52 +246,40 @@ sequenceDiagram
     RC ->> U: RemoteCallResult
 
 </div>
-
 <p>Resilience4J ci permette di decorare questa chiamata per aggiungere tutte le funzionalità aggiuntive del caso. Ad esempio, se volessimo aggiungere un <code>CircuitBreaker</code>:</p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Service</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">ResilientService</span> <span class="o">{</span>
 
-<pre><code class="language-java">@Service
-public class ResilientService {
+    <span class="nd">@Autowired</span> <span class="kd">private</span> <span class="n">ExternalService</span> <span class="n">externalService</span><span class="o">;</span>
+    <span class="nd">@Autowired</span> <span class="kd">private</span> <span class="n">CircuitBreaker</span> <span class="n">circuitBreaker</span><span class="o">;</span>
 
-    @Autowired private ExternalService externalService;
-    @Autowired private CircuitBreaker circuitBreaker;
-
-    public RemoteCallResult getRemote() {
-        return Decorators.ofSupplier(externalService::remoteCall)   // wraps the external call
-                .withCircuitBreaker(circuitBreaker)                 // decorate with a circuit breaker
-                .get();                                             // perform the call
-    }
-}
-</code></pre>
-
-<p>Quando andremo a chiamare questo metodo, possono succedere diverse cose, in base allo stato del circuit breaker:</p>
-
+    <span class="kd">public</span> <span class="n">RemoteCallResult</span> <span class="nf">getRemote</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">Decorators</span><span class="o">.</span><span class="na">ofSupplier</span><span class="o">(</span><span class="n">externalService</span><span class="o">::</span><span class="n">remoteCall</span><span class="o">)</span>   <span class="c1">// wraps the external call
+</span><span class="c1"></span>                <span class="o">.</span><span class="na">withCircuitBreaker</span><span class="o">(</span><span class="n">circuitBreaker</span><span class="o">)</span>                 <span class="c1">// decorate with a circuit breaker
+</span><span class="c1"></span>                <span class="o">.</span><span class="na">get</span><span class="o">();</span>                                             <span class="c1">// perform the call
+</span><span class="c1"></span>    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div><p>Quando andremo a chiamare questo metodo, possono succedere diverse cose, in base allo stato del circuit breaker:</p>
 <ul>
 <li>stato <code>CLOSED</code>: la chiamata al servizio esterno viene fatta</li>
 <li>stato <code>OPEN</code>: la chiamata non viene fatta, viene lanciata una <code>CallNotPermittedException</code></li>
 <li>stato <code>HALF_OPEN</code>: è passato del tempo dall&rsquo;ultimo fallimento, solo un numero limitato di chiamate viene effettuato</li>
 </ul>
-
 <p>Il circuit breaker può essere configurato a piacimento, vi rimando alla <a href="https://resilience4j.readme.io/docs/circuitbreaker">documentazione ufficiale</a> per tutti i dettagli del caso. Nel mio esempio, ho scritto la configurazione in un file <em>yaml</em>:</p>
-
-<pre><code class="language-yaml">resilience4j.circuitbreaker:
-    instances:
-        remoteService:                                  // circuit breaker instance name
-            registerHealthIndicator: true
-            slidingWindowType: TIME_BASED               // time based check
-            slidingWindowSize: 10                       // last 10 seconds
-            permittedNumberOfCallsInHalfOpenState: 3
-            minimumNumberOfCalls: 10                    // minimum number of calls to create a statistic
-            waitDurationInOpenState: 30s
-            failureRateThreshold: 50                
-</code></pre>
-
-<h1 id="conclusione">Conclusione</h1>
-
+<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">resilience4j.circuitbreaker</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="nt">instances</span><span class="p">:</span><span class="w">
+</span><span class="w">        </span><span class="nt">remoteService</span><span class="p">:</span><span class="w">                                  </span><span class="l">// circuit breaker instance name</span><span class="w">
+</span><span class="w">            </span><span class="nt">registerHealthIndicator</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span><span class="w">            </span><span class="nt">slidingWindowType</span><span class="p">:</span><span class="w"> </span><span class="l">TIME_BASED               // time based check</span><span class="w">
+</span><span class="w">            </span><span class="nt">slidingWindowSize</span><span class="p">:</span><span class="w"> </span><span class="m">10</span><span class="w">                       </span><span class="l">// last 10 seconds</span><span class="w">
+</span><span class="w">            </span><span class="nt">permittedNumberOfCallsInHalfOpenState</span><span class="p">:</span><span class="w"> </span><span class="m">3</span><span class="w">
+</span><span class="w">            </span><span class="nt">minimumNumberOfCalls</span><span class="p">:</span><span class="w"> </span><span class="m">10</span><span class="w">                    </span><span class="l">// minimum number of calls to create a statistic</span><span class="w">
+</span><span class="w">            </span><span class="nt">waitDurationInOpenState</span><span class="p">:</span><span class="w"> </span><span class="l">30s</span><span class="w">
+</span><span class="w">            </span><span class="nt">failureRateThreshold</span><span class="p">:</span><span class="w"> </span><span class="m">50</span><span class="w">                
+</span></code></pre></div><h1 id="conclusione">Conclusione</h1>
 <p>Introdurre pattern come il circuit breaker, il bulkhead ed altri permette ai sistemi di essere più resilienti ai fallimenti di servizi esterni ed interni, mettendo anche in campo strategie per tornare ad uno stato di normalità.</p>
-
 <p>Resilience4J è una libreria molto facile da usare ed integrare per implementare questi pattern. Inoltre, è facile aggiungere l&rsquo;integrazione con Grafana per un miglior <em>monitoring</em>.</p>
-
-<script async src="https://unpkg.com/mermaid@8.2.3/dist/mermaid.min.js"></script>
+<!-- raw HTML omitted -->
 
                 <br>
                 

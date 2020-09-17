@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Development on Marco Denisi</title>
@@ -6,11 +6,7 @@
     <description>Recent content in Development on Marco Denisi</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>it</language>
-    <lastBuildDate>Sun, 15 Mar 2020 12:21:26 +0100</lastBuildDate>
-    
-	<atom:link href="https://marcodenisi.dev/en/categories/development/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sun, 15 Mar 2020 12:21:26 +0100</lastBuildDate><atom:link href="https://marcodenisi.dev/en/categories/development/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Resilience in microservices era</title>
       <link>https://marcodenisi.dev/en/blog/resilience-in-microservices-era/</link>
@@ -51,7 +47,7 @@ I had the same desire when I started thinking about this blog: wouldn&amp;rsquo;
       <guid>https://marcodenisi.dev/en/blog/lambda-step-by-step/</guid>
       <description>During last weeks, I&amp;rsquo;ve worked a lot with AWS Lambda.
 The main challenge I had was to look for a method to locally test those functions. Of course, it is possible to do some partial code execution as part of unit/integration test setup, but that won’t be close enough to production setup.
-I&amp;rsquo;d like to build a sort of how-to guide in order to have a reference in the future.</description>
+I&amp;rsquo;d like to build a sort of how-to guide in order to have a reference in the future. To do so, I have to:</description>
     </item>
     
   </channel>
