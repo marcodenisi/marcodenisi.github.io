@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<meta name="author" content="Marco Denisi">
+<meta name="description" content="In Klarna, I work in a team called Post Purchase Decisioning (aka PPD). We take care of a product called Skan, which is used by internal stakeholders (called fraud agents) to work on all the orders in Klarna that can be fraudolent.
+This is a story all about how my life got flipped-turned upside down we approached the so called Peak Season (the range of time between the Black Friday and Christmax) and in detail, how we discovered and fixed a bottleneck.">
+
+<meta property="og:title" content="Fantastic bottlenecks and where to find them" />
+<meta property="og:description" content="In Klarna, I work in a team called Post Purchase Decisioning (aka PPD). We take care of a product called Skan, which is used by internal stakeholders (called fraud agents) to work on all the orders in Klarna that can be fraudolent.
+This is a story all about how my life got flipped-turned upside down we approached the so called Peak Season (the range of time between the Black Friday and Christmax) and in detail, how we discovered and fixed a bottleneck." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://marcodenisi.dev/it/blog/fantastic-bottlenecks-and-where-to-find-them/" />
+<meta property="article:published_time" content="2021-12-23T12:21:26+01:00" />
+<meta property="article:modified_time" content="2021-12-23T12:21:26+01:00" />
+
+
+<script type="application/ld+json">
+    {
+        "@context" : "http://schema.org",
+        "@type" : "BlogPosting",
+        "mainEntityOfPage": {
+             "@type": "WebPage",
+             "@id": "https:\/\/marcodenisi.dev"
+        },
+        "articleSection" : "blog",
+        "name" : "Fantastic bottlenecks and where to find them",
+        "headline" : "Fantastic bottlenecks and where to find them",
+        "description" : "In Klarna, I work in a team called Post Purchase Decisioning (aka PPD). We take care of a product called Skan, which is used by internal stakeholders (called fraud agents) to work on all the orders in Klarna that can be fraudolent.\nThis is a story all about how my life got flipped-turned upside down we approached the so called Peak Season (the range of time between the Black Friday and Christmax) and in detail, how we discovered and fixed a bottleneck.",
+        "inLanguage" : "it",
+        "author" : "Marco Denisi",
+        "creator" : "Marco Denisi",
+        "publisher": "Marco Denisi",
+        "accountablePerson" : "Marco Denisi",
+        "copyrightHolder" : "Marco Denisi",
+        "copyrightYear" : "2021",
+        "datePublished": "2021-12-23 12:21:26 \u002b0100 CET",
+        "dateModified" : "2021-12-23 12:21:26 \u002b0100 CET",
+        "url" : "https:\/\/marcodenisi.dev\/it\/blog\/fantastic-bottlenecks-and-where-to-find-them\/",
+        "wordCount" : "853",
+        "keywords" : [ "java","monitoring","datadog","performance","dynamodb","Blog" ]
+    }
+    </script>
+<title>
+
+
+     Fantastic bottlenecks and where to find them 
+
+</title>
+<link rel="canonical" href="https://marcodenisi.dev/it/blog/fantastic-bottlenecks-and-where-to-find-them/">
+
+
+
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/default.min.css">
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Ubuntu+Mono:400,400i,700,700i|Raleway:500">
+
+
+
+    
+    <link rel="stylesheet" href="https://marcodenisi.dev/css/reset.css?t=2021-12-23%2017%3a33%3a15.922443%20%2b0100%20CET%20m%3d%2b0.137179369">
+    <link rel="stylesheet" href="https://marcodenisi.dev/css/pygments.css?t=2021-12-23%2017%3a33%3a15.922443%20%2b0100%20CET%20m%3d%2b0.137179369">
+    <link rel="stylesheet" href="https://marcodenisi.dev/css/main.css?t=2021-12-23%2017%3a33%3a15.922443%20%2b0100%20CET%20m%3d%2b0.137179369">
+    
+        <link rel="stylesheet" href="https://marcodenisi.dev/css/override.css?t=2021-12-23%2017%3a33%3a15.922443%20%2b0100%20CET%20m%3d%2b0.137179369">
+    
+
+
+
+
+<link rel="shortcut icon"
+
+    href="https://marcodenisi.dev/img/favicon/favicon.ico"
+
+>
+
+
+
+
+
+
+
+
+</head>
+
+
+<body lang="it">
+
+<section class="header">
+    <div class="container">
+        <div class="content">
+            
+                
+                
+                
+                
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                
+                <a href="https://marcodenisi.dev/it/"><img class="avatar" src="https://marcodenisi.dev/img/profile_square_small.png" srcset="https://marcodenisi.dev/img/profile_square_small.png 1x"></a>
+            
+            <a href="https://marcodenisi.dev/it/"><div class="name">Marco Denisi</div></a>
+            
+            <nav>
+                <ul>
+                    
+                        <li class="nav-blog"><a href="https://marcodenisi.dev/it/blog/"><span>Blog</span></a></li>
+                    
+                        <li class="nav-about"><a href="https://marcodenisi.dev/it/about/"><span>Chi Sono</span></a></li>
+                    
+                </ul>
+            </nav>
+        </div>
+    </div>
+</section>
+
+<section class="icons">
+    <div class="container">
+        <div class="content">
+        
+            <a href="//github.com/marcodenisi" target="_blank" rel="noopener"><img class="icon" src="https://marcodenisi.dev/img/github.svg" alt="github" /></a>
+        
+
+        
+
+        
+
+	
+
+        
+
+        
+
+        
+            <a href="//linkedin.com/in/marco-denisi" target="_blank" rel="noopener"><img class="icon" src="https://marcodenisi.dev/img/linkedin.svg" alt="linkedin" /></a>
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+            <a href="mailto:marcodenisi35@gmail.com"><img class="icon" src="https://marcodenisi.dev/img/email.svg" alt="email" /></a>
+        
+
+        
+
+        
+            
+                <a href="https://marcodenisi.dev/en/blog/fantastic-bottlenecks-and-where-to-find-them/"><img class="icon flag" src="https://marcodenisi.dev/img/flags/en.svg"></a>
+            
+        
+        </div>
+    </div>
+</section>
+
+
+<section class="main post non-narrow zero-top-spacing">
+    <div class="container">
+        <div class="content">
+            <div class="front-matter">
+                <div class="title-container">
+                    <div class="page-heading">
+
+    Fantastic bottlenecks and where to find them
+
+</div>
+
+                    <div class="initials"><a href="https://marcodenisi.dev">ad</a></div>
+                </div>
+                <div class="meta">
+                    
+                    <div class="date" title='23/12/2021 12:21'>23/12/2021</div>
+                    
+                    
+		    <div class="reading-time"><div class="middot"></div>5 minuti di lettura</div>
+                    
+                </div>
+            </div>
+            <div class="markdown">
+                <p>In Klarna, I work in a team called Post Purchase Decisioning (aka PPD). We take care of a product called <strong>Skan</strong>, which is used by internal stakeholders (called fraud agents) to work on all the orders in Klarna that can be fraudolent.</p>
+<p>This is a story all about how <del>my life got flipped-turned upside down</del> we approached the so called Peak Season (the range of time between the Black Friday and Christmax) and in detail, how we discovered and fixed a bottleneck. Enjoy!</p>
+<p><img src="https://marcodenisi.dev/img/articles/bottlenecks/fantastic-beasts.jpg" alt="PPD Approaching Peak Season"></p>
+<h1 id="tldr">TL;DR</h1>
+<ul>
+<li>We wanted to load test our service used to ingest data from kafka;</li>
+<li>Turned out the V1 Java DynamoDB client was the bottleneck;</li>
+<li>Changing to asynchronous version improved metrics up to 75%;</li>
+</ul>
+<h1 id="some-context">Some Context</h1>
+<p>The Peak Season is just around the corner, and as everyone in Klarna we need to be sure we won’t blow up like a balloon.</p>
+<p>The SKAN backend can be roughly split in two different parts:</p>
+<ul>
+<li>The ingestion part, used to consume data from all our sources (aka Kafka Topics) and to save everything in a DynamoDB;</li>
+<li>The serverless part, triggered by DynamoDB Streams, enriches the data and moves everything in ElasticSearch, ready to be consumed by the frontend.</li>
+</ul>
+<p><img src="https://marcodenisi.dev/img/articles/bottlenecks/be.jpg" alt="Simplified SKAN Architecture"></p>
+<p>What we wanted to do, is to start checking if our ingestion was good enough to keep up with the expected load: 9K kafka messages per second during peak seconds. This is our environment setup:</p>
+<ul>
+<li><strong>Load produced</strong>: 9K events per second</li>
+<li><strong>Instances Size</strong>: Medium (m5-generation instance, 1vCPU, 3GB memory)</li>
+<li><strong>Instances Min/Max</strong>: Min 8, Max 32</li>
+</ul>
+<h1 id="first-run">First Run</h1>
+<p>We started producing 9K events per second using cheetah, an internal framework based on <a href="https://locust.io/">locust</a>, and that’s the result:
+<img src="https://marcodenisi.dev/img/articles/bottlenecks/run1_0.png" alt="Datadog dashboard consumer lag">
+<img src="https://marcodenisi.dev/img/articles/bottlenecks/run1_1.png" alt="Datadog dashboard consumer write capacity dynamodb">
+<img src="https://marcodenisi.dev/img/articles/bottlenecks/run1_2.png" alt="Datadog dashboard container cpu load"></p>
+<p>To sum up:</p>
+<ul>
+<li>16K consumer lag at peak
+<ul>
+<li>And 4 minutes to recover</li>
+</ul>
+</li>
+<li>DynamoDB write units at almost 11K at peak</li>
+<li>We started scaling to 14 instances only at the end of the computation, when the max CPU reached up to 92%</li>
+</ul>
+<p>We wanted to minimize the consumer lag though. So, under the hypothesis that more instances would mean ingesting more messages, we decided to warm up the pool and then to hit it with everything we’ve got.</p>
+<p>Another thing we did was increase the number of partitions of the kafka topic we were using to mimic the production environment and better balance the consumers/partitions ratio.</p>
+<p>Spoiler alert: that didn’t work.</p>
+<p><img src="https://marcodenisi.dev/img/articles/bottlenecks/totally_unexpected.jpeg" alt="Totally unexpected"></p>
+<h1 id="second-run">Second Run</h1>
+<p>Without further ado, here’s the results of the warming up experiment plus the actual load test:</p>
+<p><img src="https://marcodenisi.dev/img/articles/bottlenecks/run2_0.png" alt="Datadog dashboard consumer lag">
+<img src="https://marcodenisi.dev/img/articles/bottlenecks/run2_1.png" alt="Datadog dashboard consumer write capacity dynamodb">
+<img src="https://marcodenisi.dev/img/articles/bottlenecks/run2_2.png" alt="Datadog dashboard container cpu load"></p>
+<p>You can clearly see the warm up run and then the actual load test run by looking at the metrics above.</p>
+<p>Again, let’s put together some considerations:</p>
+<ul>
+<li>The consumer lag went up to 29K
+<ul>
+<li>increasing the instances didn’t do much</li>
+</ul>
+</li>
+<li>Again, DynamoDB write units at 11K at peak
+<ul>
+<li>This starts to be suspicious</li>
+</ul>
+</li>
+<li>The actual load test run was done against 19 instances</li>
+</ul>
+<p>The most suspicious thing is DynamoDB write units being “locked” to 11K per minute. DynamoDB can write way more than this, so it can’t be a real bottleneck. But clearly, something’s going on there.</p>
+<h1 id="a-deeper-look-at-dynamodb-java-client">A deeper look at DynamoDB Java Client</h1>
+<p>The focus then moved to how we persist data in DynamoDB. One interesting metric to check is the SuccessfulRequestLatency, which, according to the AWS documentation:</p>
+<blockquote>
+<p>The successful requests to DynamoDB or Amazon DynamoDB Streams during the specified time period</p>
+<p>&hellip;.</p>
+<p>SuccessfulRequestLatency reflects activity only within DynamoDB or Amazon DynamoDB Streams, and does not take into account network latency or client-side activity.</p>
+</blockquote>
+<p>And while the average value was ok-ish, that’s what we got when we looked for the maximum value:</p>
+<p><img src="https://marcodenisi.dev/img/articles/bottlenecks/dynamodb_latency_avg.png" alt="Datadog dashboard dynamodb request latency average">
+<img src="https://marcodenisi.dev/img/articles/bottlenecks/dynamodb_latency.png" alt="Datadog dashboard dynamodb request latency max"></p>
+<p>We got one peak of over 2 seconds and multiple peaks over 1 second! There was of course some issue with that. We used the DynamoDB client offered by the AWS SDK v1, which we discovered being synchronous and blocking! This means that each and every thread performing http calls to AWS will wait for the response. And this means a lot of wasted time doing basically nothing.</p>
+<p>Thus we decided to try the shiny new <a href="https://docs.aws.amazon.com/sdk-for-java/latest/developer-guide/dynamodb-enhanced-client.html">DynamoDB Enhanced Client</a>. As stated in the official documentation, the main difference is</p>
+<blockquote>
+<p>The AWS SDK for Java 2.x features truly non blocking asynchronous clients that implement high concurrency across a few threads. The AWS SDK for Java 1.x has asynchronous clients that are wrappers around a thread pool and blocking synchronous clients that don’t provide the full benefit of nonblocking I/O.</p>
+</blockquote>
+<p>This would mean that even if the DDB latency can have peaks, we no longer wait for each call to finish, instead we offload this “I/O” operation to another thread. Let’s see this new client in action.</p>
+<p><img src="https://marcodenisi.dev/img/articles/bottlenecks/run3_0.png" alt="Datadog dashboard consumer lag">
+<img src="https://marcodenisi.dev/img/articles/bottlenecks/run3_1.png" alt="Datadog dashboard consumer write capacity dynamodb">
+<img src="https://marcodenisi.dev/img/articles/bottlenecks/run3_2.png" alt="Datadog dashboard container cpu load"></p>
+<h1 id="conclusions">Conclusions</h1>
+<p>Results are really promising. To sum up:</p>
+<ul>
+<li>We still have consumer lag, but we have a reduction of the 75%</li>
+<li>We manage to unleash the potential of DynamoDB with 25K write capacity units per minute</li>
+</ul>
+<p>The only drawback is that we almost broke DynamoDB. In fact, we reached an upper limit for which DynamoDB had to scale. We were not resilient to that scenario (aka we didn’t retry on that error), so this is something we definitely need to address and something we wouldn&rsquo;t have noticed if we hadn&rsquo;t done performance tests.</p>
+
+                <br>
+                
+                  <div class="tags">
+                    <strong>Tags:</strong>
+                  
+                    <a href="https://marcodenisi.dev/it/tags/java">java</a>
+                  
+                    <a href="https://marcodenisi.dev/it/tags/monitoring">monitoring</a>
+                  
+                    <a href="https://marcodenisi.dev/it/tags/datadog">datadog</a>
+                  
+                    <a href="https://marcodenisi.dev/it/tags/performance">performance</a>
+                  
+                    <a href="https://marcodenisi.dev/it/tags/dynamodb">dynamodb</a>
+                  
+                  </div>
+                  <br />
+                
+                <p class="back-to-posts"><a href="https://marcodenisi.dev/it/blog">Indietro ai post</a></p>
+            </div>
+            <br>
+            <div class="disqus">
+                
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-143191600-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/languages/go.min.js"></script>
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/languages/yaml.min.js"></script>
+  
+
+  <script type="text/javascript">
+    hljs.initHighlightingOnLoad();
+  </script>
+
+
+
+
+
+</body>
+</html>
+

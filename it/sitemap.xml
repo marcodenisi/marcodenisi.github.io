@@ -3,6 +3,156 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://marcodenisi.dev/it/categories/</loc>
+    <lastmod>2021-12-23T12:21:26+01:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://marcodenisi.dev/en/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="it"
+                href="https://marcodenisi.dev/it/categories/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://marcodenisi.dev/it/tags/datadog/</loc>
+    <lastmod>2021-12-23T12:21:26+01:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://marcodenisi.dev/en/tags/datadog/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="it"
+                href="https://marcodenisi.dev/it/tags/datadog/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://marcodenisi.dev/it/categories/development/</loc>
+    <lastmod>2021-12-23T12:21:26+01:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://marcodenisi.dev/en/categories/development/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="it"
+                href="https://marcodenisi.dev/it/categories/development/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://marcodenisi.dev/it/tags/dynamodb/</loc>
+    <lastmod>2021-12-23T12:21:26+01:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://marcodenisi.dev/en/tags/dynamodb/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="it"
+                href="https://marcodenisi.dev/it/tags/dynamodb/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://marcodenisi.dev/it/blog/fantastic-bottlenecks-and-where-to-find-them/</loc>
+    <lastmod>2021-12-23T12:21:26+01:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://marcodenisi.dev/en/blog/fantastic-bottlenecks-and-where-to-find-them/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="it"
+                href="https://marcodenisi.dev/it/blog/fantastic-bottlenecks-and-where-to-find-them/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://marcodenisi.dev/it/tags/java/</loc>
+    <lastmod>2021-12-23T12:21:26+01:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://marcodenisi.dev/en/tags/java/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="it"
+                href="https://marcodenisi.dev/it/tags/java/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://marcodenisi.dev/it/</loc>
+    <lastmod>2021-12-23T12:21:26+01:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://marcodenisi.dev/en/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="it"
+                href="https://marcodenisi.dev/it/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://marcodenisi.dev/it/tags/monitoring/</loc>
+    <lastmod>2021-12-23T12:21:26+01:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://marcodenisi.dev/en/tags/monitoring/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="it"
+                href="https://marcodenisi.dev/it/tags/monitoring/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://marcodenisi.dev/it/tags/performance/</loc>
+    <lastmod>2021-12-23T12:21:26+01:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://marcodenisi.dev/en/tags/performance/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="it"
+                href="https://marcodenisi.dev/it/tags/performance/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://marcodenisi.dev/it/tags/</loc>
+    <lastmod>2021-12-23T12:21:26+01:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://marcodenisi.dev/en/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="it"
+                href="https://marcodenisi.dev/it/tags/"
+                />
+  </url>
+  
+  <url>
     <loc>https://marcodenisi.dev/it/tags/best-practises/</loc>
     <lastmod>2020-09-17T12:39:10+02:00</lastmod>
     <xhtml:link
@@ -14,21 +164,6 @@
                 rel="alternate"
                 hreflang="it"
                 href="https://marcodenisi.dev/it/tags/best-practises/"
-                />
-  </url>
-  
-  <url>
-    <loc>https://marcodenisi.dev/it/categories/</loc>
-    <lastmod>2020-09-17T12:39:10+02:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://marcodenisi.dev/en/categories/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="it"
-                href="https://marcodenisi.dev/it/categories/"
                 />
   </url>
   
@@ -78,36 +213,6 @@
   </url>
   
   <url>
-    <loc>https://marcodenisi.dev/it/</loc>
-    <lastmod>2020-09-17T12:39:10+02:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://marcodenisi.dev/en/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="it"
-                href="https://marcodenisi.dev/it/"
-                />
-  </url>
-  
-  <url>
-    <loc>https://marcodenisi.dev/it/tags/</loc>
-    <lastmod>2020-09-17T12:39:10+02:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://marcodenisi.dev/en/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="it"
-                href="https://marcodenisi.dev/it/tags/"
-                />
-  </url>
-  
-  <url>
     <loc>https://marcodenisi.dev/it/blog/business-driven-branching/</loc>
     <lastmod>2020-05-19T16:29:13+02:00</lastmod>
     <xhtml:link
@@ -134,36 +239,6 @@
                 rel="alternate"
                 hreflang="it"
                 href="https://marcodenisi.dev/it/tags/circuit-breaker/"
-                />
-  </url>
-  
-  <url>
-    <loc>https://marcodenisi.dev/it/categories/development/</loc>
-    <lastmod>2020-03-15T12:21:26+01:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://marcodenisi.dev/en/categories/development/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="it"
-                href="https://marcodenisi.dev/it/categories/development/"
-                />
-  </url>
-  
-  <url>
-    <loc>https://marcodenisi.dev/it/tags/java/</loc>
-    <lastmod>2020-03-15T12:21:26+01:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://marcodenisi.dev/en/tags/java/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="it"
-                href="https://marcodenisi.dev/it/tags/java/"
                 />
   </url>
   

@@ -6,7 +6,52 @@
     <description>Recent content in Tags on Marco Denisi</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>it</language>
-    <lastBuildDate>Thu, 17 Sep 2020 12:39:10 +0200</lastBuildDate><atom:link href="https://marcodenisi.dev/en/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 23 Dec 2021 12:21:26 +0100</lastBuildDate><atom:link href="https://marcodenisi.dev/en/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>datadog</title>
+      <link>https://marcodenisi.dev/en/tags/datadog/</link>
+      <pubDate>Thu, 23 Dec 2021 12:21:26 +0100</pubDate>
+      
+      <guid>https://marcodenisi.dev/en/tags/datadog/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>dynamodb</title>
+      <link>https://marcodenisi.dev/en/tags/dynamodb/</link>
+      <pubDate>Thu, 23 Dec 2021 12:21:26 +0100</pubDate>
+      
+      <guid>https://marcodenisi.dev/en/tags/dynamodb/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>java</title>
+      <link>https://marcodenisi.dev/en/tags/java/</link>
+      <pubDate>Thu, 23 Dec 2021 12:21:26 +0100</pubDate>
+      
+      <guid>https://marcodenisi.dev/en/tags/java/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>monitoring</title>
+      <link>https://marcodenisi.dev/en/tags/monitoring/</link>
+      <pubDate>Thu, 23 Dec 2021 12:21:26 +0100</pubDate>
+      
+      <guid>https://marcodenisi.dev/en/tags/monitoring/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>performance</title>
+      <link>https://marcodenisi.dev/en/tags/performance/</link>
+      <pubDate>Thu, 23 Dec 2021 12:21:26 +0100</pubDate>
+      
+      <guid>https://marcodenisi.dev/en/tags/performance/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>best practises</title>
       <link>https://marcodenisi.dev/en/tags/best-practises/</link>
@@ -31,15 +76,6 @@
       <pubDate>Sun, 15 Mar 2020 12:21:26 +0100</pubDate>
       
       <guid>https://marcodenisi.dev/en/tags/circuit-breaker/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>java</title>
-      <link>https://marcodenisi.dev/en/tags/java/</link>
-      <pubDate>Sun, 15 Mar 2020 12:21:26 +0100</pubDate>
-      
-      <guid>https://marcodenisi.dev/en/tags/java/</guid>
       <description></description>
     </item>
     

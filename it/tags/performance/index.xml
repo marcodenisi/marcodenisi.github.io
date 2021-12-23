@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>performance on Marco Denisi</title>
+    <link>https://marcodenisi.dev/it/tags/performance/</link>
+    <description>Recent content in performance on Marco Denisi</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>it</language>
+    <lastBuildDate>Thu, 23 Dec 2021 12:21:26 +0100</lastBuildDate><atom:link href="https://marcodenisi.dev/it/tags/performance/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Fantastic bottlenecks and where to find them</title>
+      <link>https://marcodenisi.dev/it/blog/fantastic-bottlenecks-and-where-to-find-them/</link>
+      <pubDate>Thu, 23 Dec 2021 12:21:26 +0100</pubDate>
+      
+      <guid>https://marcodenisi.dev/it/blog/fantastic-bottlenecks-and-where-to-find-them/</guid>
+      <description>In Klarna, I work in a team called Post Purchase Decisioning (aka PPD). We take care of a product called Skan, which is used by internal stakeholders (called fraud agents) to work on all the orders in Klarna that can be fraudolent.
+This is a story all about how my life got flipped-turned upside down we approached the so called Peak Season (the range of time between the Black Friday and Christmax) and in detail, how we discovered and fixed a bottleneck.</description>
+    </item>
+    
+  </channel>
+</rss>

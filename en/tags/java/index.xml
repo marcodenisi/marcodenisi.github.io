@@ -6,7 +6,17 @@
     <description>Recent content in java on Marco Denisi</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>it</language>
-    <lastBuildDate>Sun, 15 Mar 2020 12:21:26 +0100</lastBuildDate><atom:link href="https://marcodenisi.dev/en/tags/java/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 23 Dec 2021 12:21:26 +0100</lastBuildDate><atom:link href="https://marcodenisi.dev/en/tags/java/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Fantastic bottlenecks and where to find them</title>
+      <link>https://marcodenisi.dev/en/blog/fantastic-bottlenecks-and-where-to-find-them/</link>
+      <pubDate>Thu, 23 Dec 2021 12:21:26 +0100</pubDate>
+      
+      <guid>https://marcodenisi.dev/en/blog/fantastic-bottlenecks-and-where-to-find-them/</guid>
+      <description>In Klarna, I work in a team called Post Purchase Decisioning (aka PPD). We take care of a product called Skan, which is used by internal stakeholders (called fraud agents) to work on all the orders in Klarna that can be fraudolent.
+This is a story all about how my life got flipped-turned upside down we approached the so called Peak Season (the range of time between the Black Friday and Christmax) and in detail, how we discovered and fixed a bottleneck.</description>
+    </item>
+    
     <item>
       <title>Resilience in microservices era</title>
       <link>https://marcodenisi.dev/en/blog/resilience-in-microservices-era/</link>
